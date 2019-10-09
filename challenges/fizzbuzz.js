@@ -17,14 +17,17 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-if(num==undefined || num<1){
+if(num==undefined || num<1 || Array.isArray(num) || num instanceof Object){
+    //if typeof is not num like object or array, we also return undefined
     return num;
 }
 let result=[];
     for(let i=1;i<=num;i++){
         //we must make these XOR statements to not overprint, switch cases
+        //to handle negatives we go in reverse, but here we start at 1
         if(i%3==0 && i%5==0){
             result.push('fizzbuzz');
+            
         }
         else if(i%3==0){
             result.push('fizz');
@@ -37,7 +40,14 @@ let result=[];
         }
 
     }
+    console.log(result);
 return result;
 }
 
+console.log(fizzbuzz(66));
+
+console.log(fizzbuzz(-6));
+console.log(fizzbuzz('15'));
+console.log(fizzbuzz([1,2,3,"L"]));
+console.log(fizzbuzz({1:2}));
 module.exports = fizzbuzz;
