@@ -17,7 +17,38 @@
 //                     16 ]
 
 function fizzbuzz(num) {
+    if (num === undefined) {
+        return 'Please enter a valid number.'
+    }
 
+    if (typeof num !== "number") {
+        return 'Please enter a valid number.'
+    }
+
+    if (num < 0) {
+        return 'Please enter a number that is greater than 0.'
+    }
+
+    const fizzbuzzed = [];
+
+    for (let i = 1; i <= num; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            fizzbuzzed.push("fizzbuzz");
+        } else if (i % 3 === 0) {
+            fizzbuzzed.push("fizz");
+        } else if (i % 5 === 0) {
+            fizzbuzzed.push("buzz");
+        } else {
+            fizzbuzzed.push(i);
+        }
+    }
+
+    return fizzbuzzed;
 }
+
+console.log(fizzbuzz(16));
+console.log(fizzbuzz(-2))
+console.log(fizzbuzz('Hi'));
+console.log(fizzbuzz(undefined));
 
 module.exports = fizzbuzz;
