@@ -26,7 +26,7 @@ function fizzbuzz(num) {
             arr.push('buzz');
         }
         else if(i%3 == 0){
-            arr.push('fizz')
+            arr.push('fizz');
         }
         else{
             arr.push(i);
