@@ -17,7 +17,18 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
+    const newArr =[];
+    for (let i = 1; i<=num; i++) {
+        newArr.push(i)
+        console.log(newArr)
+    }
+    for
+//fizz by 3
+//buzz by 5
+// fizbuzz by 3and 5
+  
 }
+
+console.log(fizzbuzz(10))
 
 module.exports = fizzbuzz;
