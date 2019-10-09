@@ -17,10 +17,10 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-    if (num === undefined || num !== "number") {
+    if (num === undefined || typeof num !== "number") {
         return 'Please enter a valid number.'
     }
-    
+
     if (num < 0) {
         return 'Please enter a number that is greater than 0.'
     }
