@@ -26,9 +26,9 @@ function fizzbuzz(num) {
     }
     console.log(newArr)
     return newArr;
-  
 }
 
-console.log(fizzbuzz(45))
+//Check if it works
+console.log('check', fizzbuzz(45))
 
 module.exports = fizzbuzz;
