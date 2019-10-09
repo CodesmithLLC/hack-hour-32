@@ -17,7 +17,27 @@
 //                     16 ]
 
 function fizzbuzz(num) {
+if(num==undefined || num<1){
+    return num;
+}
+let result=[];
+    for(let i=1;i<=num;i++){
+        //we must make these XOR statements to not overprint, switch cases
+        if(i%3==0 && i%5==0){
+            result.push('fizzbuzz');
+        }
+        else if(i%3==0){
+            result.push('fizz');
+        }
+        else if(i%5==0){
+            result.push('buzz');
+        }
+        else{
+            result.push(i);
+        }
 
+    }
+return result;
 }
 
 module.exports = fizzbuzz;
