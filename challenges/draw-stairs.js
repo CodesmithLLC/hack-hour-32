@@ -15,7 +15,10 @@
 
 function drawStairs(n) {
     //
-    if(n<=0){
+    if(n===undefined){
+        return;
+    }
+    else if(n<=0){
         return "";
     }
     else{
@@ -38,4 +41,5 @@ function drawStairs(n) {
 
 
 module.exports = drawStairs;
-console.log(drawStairs(6));
+//console.log(drawStairs(6));
+//console.log(drawStairs(17));
