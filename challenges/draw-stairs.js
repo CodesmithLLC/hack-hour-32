@@ -14,8 +14,12 @@
 */
 
 function drawStairs(n) {
-
+    //we need to add a space for every asterik
+    //loop up to n
+    for (let i = 0; i <= n; i++) {
+        console.log(' '.repeat(n-i) + '*'.repeat(i)) 
+    }
 }
 
-
+console.log(drawStairs(5))
 module.exports = drawStairs;
