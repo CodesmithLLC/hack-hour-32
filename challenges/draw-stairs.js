@@ -14,8 +14,36 @@
 */
 
 function drawStairs(n) {
+  let stairs = 1;
+  //   let spaces = '';
+  //   let stars = '';
+  let staircase = '';
+  for (let i = 0; i < n; i++) {
+    // Prints spaces first
+    // Stairs is the number of * in the given line
+    for (let j = 0; j < n - stairs; j++) {
+      //   console.log(' ');
+      //   spaces += ' ';
+      staircase += ' ';
+    }
 
+    // Prints stairs
+    for (let j = 0; j < stairs; j++) {
+      //   console.log('*');
+      //   stars += '*';
+      staircase += '*';
+    }
+    stairs++;
+    // console.log(spaces);
+    // console.log(stars);
+    console.log(staircase);
+    console.log('\n');
+    // spaces = '';
+    // stars = '';
+    staircase = '';
+  }
 }
 
-
 module.exports = drawStairs;
+
+drawStairs(6);
