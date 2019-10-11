@@ -26,6 +26,6 @@ function drawStairs(n, i = 0) {
   }
 }
 
-drawStairs(6);
+//drawStairs(6);
 
 module.exports = drawStairs;
