@@ -20,13 +20,14 @@
 
 function fizzbuzz(num) {
     let result = [];
-    for (let num = 1; num <=16; num++) {
-        if (num % 3 === 0 && num % 5 === 0) result.push('fizzbuzz');
-        else if (num % 3 === 0) result.push('fizz');
-        else if (num % 5 === 0) result.push('buzz');
-        else result.push(num);
+    for (let i = 1; i <=num; i++) {
+        if (i % 3 === 0 && i % 5 === 0) result.push('fizzbuzz');
+        else if (i % 3 === 0) result.push('fizz');
+        else if (i % 5 === 0) result.push('buzz');
+        else result.push(i);
     }
     return result;
 }
-
 module.exports = fizzbuzz;
+
+
