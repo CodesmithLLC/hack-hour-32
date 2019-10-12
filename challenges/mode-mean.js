@@ -15,15 +15,17 @@ function modemean(array) {
     return acc;
   })) / array.length;
 
-  let obj = {}
-  for (let i = 0; i < array.length; i += 1) {
-    if (!obj.hasOwnProperty(array[i])) {
-      obj[array[i]] = 0
+  let obj = array.reduce((acc, el) => {
+    if (!acc.hasOwnProperty(el)) {
+      acc[el] = 1;
+      return acc;
     }
-    obj[array[i]] += 1;
-  }
+    acc[el] += 1;
+    return acc;
+  }, {});
   
   console.log(obj)
+
   let mode = 0;
   for (let key in obj) {
     if (obj[key] > mode) {
