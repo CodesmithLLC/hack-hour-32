@@ -16,16 +16,22 @@ function modemean(array) {
 	let sum = array.reduce((acc, element) => {
 		// store all values
 		if (modeStore[element] === undefined) {
-			modeStore[element] += 1;
+      modeStore[element] = 0;
 		}
+    modeStore[element] += 1;
 		return acc + element
 	}, 0);
-	let median = Math.floor(sum / array.length);
+	let mean = Math.floor(sum / array.length);
 	// find mode
 	let modeEntries = Object.entries(modeStore);
 
+  // console.log(modeEntries);
+
 	let modePair = modeEntries.reduce( (acc, modeEntry) => {
-		if (modeEntry[1] >= acc[1]) {
+    // console.log(`comparing modeEntry: ${modeEntry} with acc: ${acc}`)
+		if (modeEntry[1] > acc[1]) {
+			return modeEntry;
+		} else if (modeEntry[1] === acc[1] && modeEntry[0] < acc[0]) {
 			return modeEntry;
 		} else {
 			return acc;
@@ -33,6 +39,9 @@ function modemean(array) {
 	});
 
 	let mode = modePair[0];
+
+  // console.log(`mean: ${mean}`);
+  // console.log(`mode: ${mode}`);
 
 	return (mode === mean);
 
