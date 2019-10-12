@@ -24,8 +24,8 @@ function modemean(array) {
     }
     let mode=1; //elements each exist
     let modeElement=array[0];
-    let sum;
-    let mean;
+    let sum=0;
+    let mean=0;
 
     for(let i=0;i<array.length;i++){
         let el=array[i];
@@ -37,7 +37,8 @@ function modemean(array) {
             //if index j is at .length-mode-count we can break out sooner
             //we do not need to recount begining so we start at i to shorten the circuit
             if(array[j]===el){count++;}
-            console.log("in the count");
+            console.log(mode);
+            console.log(sum);
             //another idea is to use the strin and remove chars and compare the lenghts
         }
         if(count===mode){
@@ -65,4 +66,4 @@ function modemean(array) {
 module.exports = modemean;
 
 
-console.log(modemean[1,2,3,3,2,1,0]);
+
