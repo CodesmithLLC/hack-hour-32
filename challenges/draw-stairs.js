@@ -10,23 +10,7 @@
   ****
  *****
 ******
-
 */
-
-// function drawStairs(n) {
-//   for (let i = 1; i <= n; i++) {
-//     let stairString = '';
-//     let spaces = n - i;
-
-//     for (let j = 0; j < spaces; j++) {
-//       stairString += ' ';
-//     }
-//     for (let k = 0; k < i; k++) {
-//       stairString += '*'
-//     }
-//     console.log(stairString);
-//   }
-// }
 
 function drawStairs(n) {
   let stairs = '';
@@ -39,6 +23,5 @@ function drawStairs(n) {
 function drawStairs(5);
 
 module.exports = drawStairs;
-
 
 
