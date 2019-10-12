@@ -25,10 +25,7 @@ function modemean(array) {
 	// find mode
 	let modeEntries = Object.entries(modeStore);
 
-  // console.log(modeEntries);
-
 	let modePair = modeEntries.reduce( (acc, modeEntry) => {
-    // console.log(`comparing modeEntry: ${modeEntry} with acc: ${acc}`)
 		if (modeEntry[1] > acc[1]) {
 			return modeEntry;
 		} else if (modeEntry[1] === acc[1] && modeEntry[0] < acc[0]) {
@@ -40,12 +37,7 @@ function modemean(array) {
 
 	let mode = modePair[0];
 
-  // console.log(`mean: ${mean}`);
-  // console.log(`mode: ${mode}`);
-
-	return (mode === mean);
-
-	//, [modeEntries[0][0], modeEntries[0][1]]
+	return (mode == mean);
 }
 
 module.exports = modemean;
