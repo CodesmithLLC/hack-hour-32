@@ -10,10 +10,10 @@
  */
 
 function modemean(array) {
-  let mean = (array.reduce((acc, el) => {
+  let mean = Math.floor((array.reduce((acc, el) => {
     acc += el;
     return acc;
-  })) / array.length;
+  })) / array.length);
 
   let obj = array.reduce((acc, el) => {
     if (!acc.hasOwnProperty(el)) {
@@ -24,17 +24,14 @@ function modemean(array) {
     return acc;
   }, {});
   
-  console.log(obj)
-
   let mode = 0;
   for (let key in obj) {
-    if (obj[key] > mode) {
-      mode = obj[key];
+    if (obj[key] >= mode) {
+      mode = key;
     }
   }
-
-  console.log(mean)
-  if (mode === mean) {
+  
+  if (parseInt(mode) === mean) {
     return true;
   }
   return false;
