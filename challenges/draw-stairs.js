@@ -14,8 +14,22 @@
 */
 
 function drawStairs(n) {
+    if (n <= 0 || n > 100) return 'error'
+    let space = ' '
+    let star = '*'
+    let spacecounter = n - 1
+    let starcounter = 1
+    let result = ''
+    for (let i = 0 ; i < n; i++) {
+        console.log(space.repeat(spacecounter).concat(star.repeat(starcounter)))
+        spacecounter--
+        starcounter++       
+    }
+    return result
 
 }
 
 
+console.log(drawStairs(5))
 module.exports = drawStairs;
+
