@@ -25,15 +25,15 @@ function modemean(array) {
     }
     let mode = 0;
     for (let key in obj) {
-        if (obj[key] > mode) mode = obj[key]; 
+        if (obj[key] > mode) mode = parseInt(key); 
     }
     if (mean === mode) return true;
     else return false;
 }
 
-var arr = [2,2,2,1,5,8,1];
+var arr = [1, 2, 2, 3, 1, 3, 2];
 console.log(modemean(arr)); // expected 'true'
-var arr = [2,2,2,1,5,8,2];
+var arr = [1, 2, 2, 3, 1, 3, 5];
 console.log(modemean(arr)); // expected 'false'
 
 
