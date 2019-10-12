@@ -13,8 +13,21 @@
 
 */
 
-function drawStairs(n) {
-
+function drawStairs(n, firstElement) {
+    let max = n;
+    let firstElement = n - (n - 1);
+    let incremntedElement = firstElement + 1;
+    let numOfSpaces = Math.abs(n - 1);
+    let asterikSign = "*";
+    let space = " ";
+    let row = space.repeat(numOfSpaces) + asterikSign.repeat(n);
+    console.log(row);
+    updatedArray.push(row);
+    if (firstElement === max) {
+        console.log(updatedArray);
+    } else {
+        return drawStairs(max, incrementedElement);
+    }
 }
 
 
