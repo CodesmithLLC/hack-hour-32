@@ -23,9 +23,9 @@ function drawStairs(n) {
     // don't need to return anything
 }
 
-drawStairs(3);
+drawStairs(6);
 
-//  * (2 spaces)
+//  * (2 slspaces)
 // ** (1 space)
 //*** (0 space)
 module.exports = drawStairs;
