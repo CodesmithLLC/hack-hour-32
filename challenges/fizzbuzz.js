@@ -34,4 +34,23 @@ function fizzbuzz(num) {
   return arr;
 }
 
+function fizzbuzz (num) {
+  return [num].reduce((acc, el) => {
+    // some code
+    if (num > 0) {
+        if ((i % 3 === 0) && (i % 5 === 0)) {
+          [arr].unshift('fizzbuzz')
+        }
+        else if (i % 3 === 0) {
+          arr.unshift('fizz')
+        }
+        else if (i % 5 === 0) {
+          arr.unshift('buzz')
+    } else {
+      [num].unshift(num - 1)
+    }
+  }
+  })
+}
+
 module.exports = fizzbuzz;
