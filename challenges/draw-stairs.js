@@ -13,6 +13,7 @@
 
 */
 
+
 function drawStairs(n) {
     let returnArr = [];
     for(let i = 0; i < n; i++){
@@ -27,5 +28,6 @@ function drawStairs(n) {
     }
     return returnArr;
 }
+
 
 module.exports = drawStairs;
