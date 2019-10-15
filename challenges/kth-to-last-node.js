@@ -20,9 +20,20 @@ function Node(val) {
   this.value = val;
   this.next = null;
 }
-
+let arr = [];
 function kthToLastNode(k, head) {
-
+  let currNode = head;
+  
+  
+  arr.push(currNode);
+  console.log(arr);
+  if(currNode.next !== null){
+    kthToLastNode(k,currNode.next);
+  }
+  return arr[arr.length-k];
 }
+
+
+   console.log(kthToLastNode(2, a).value);
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
