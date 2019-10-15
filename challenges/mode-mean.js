@@ -31,7 +31,7 @@ function modemean(array) {
     else return false;
 }
 
-var arr = [1, 2, 2, 3, 1, 3, 2];
+var arr = [1, 2, 2, 3, 1, 3, 2, 4, 4, 4];
 console.log(modemean(arr)); // expected 'true'
 var arr = [1, 2, 2, 3, 1, 3, 5];
 console.log(modemean(arr)); // expected 'false'
