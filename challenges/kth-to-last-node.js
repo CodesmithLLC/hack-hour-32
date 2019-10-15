@@ -21,8 +21,50 @@ function Node(val) {
   this.next = null;
 }
 
-function kthToLastNode(k, head) {
+function kthToLastNode(k, head, nodes = []) {
+
+  const current = head;
+  nodes.push(current);
+
+  const kTarget = nodes.length - k;
+  
+
+  // BASE CASE
+  if (!current.next) return nodes[kTarget].value;  
+
+  return kthToLastNode(k, current.next, nodes);
 
 }
 
+  /*** TEST ***/
+
+  /*
+function ll() {
+  this.head = null;
+  this.tail = null;
+}
+
+ll.prototype.add = function(value) {
+  if (!this.head) {
+	this.head = this.tail = new Node(value);
+	return;
+  }
+
+  this.tail.next = new Node(value);
+  this.tail = this.tail.next;
+}
+
+
+const list = new ll(5);
+list.add(2);
+list.add(7);
+list.add(3);
+list.add(6);
+console.log(kthToLastNode(1,list.head));
+
+*/
+
+
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+
+
