@@ -32,6 +32,8 @@ function modemean(array) {
     return true;
 }
 
+console.log(modemean([1,2,3]));
+
 
 
 module.exports = modemean;
