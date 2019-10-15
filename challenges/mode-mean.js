@@ -16,6 +16,12 @@ function modemean(array) {
     let sorted = array.sort((a, b) => a - b)
     console.log(sorted)
     console.log(sorted.length)
+    
+
+
+
+
+
     let cache = {}
     for (let element of sorted) {
         if (cache[element]) {
