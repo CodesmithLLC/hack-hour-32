@@ -27,18 +27,42 @@ function kthToLastNode(k, head) {
 
   //going backwards and we do not have a tail pointer
   //our first try we must simply count until .next for k times is null(end of the test)
+  if(head===undefined || head===null){
+    return;
+  }
   let currentNode=head;
+  let n=0;
+  while(currentNode!==null){
+    currentNode=currentNode.next;
+    n++;
+  }
   ////let kBackNode; //may or may not exist in the node linked list
-  while(currentNode!==null && k>0)
+  currentNode=head;//reset
+  let b=n-k;
+  while(currentNode!==null && b>0)
   {
     currentNode=currentNode.next;
+    b--;
   }
-  if(k!==0){
+  if(b!==0){
     return;
   }
   else{
     return currentNode;
   }
 }
+
+const a = new Node('A');
+ const b = new Node('B');
+const c = new Node('C');
+ const d = new Node('D');
+const e = new Node('E');
+
+ a.next = b;
+ b.next = c;
+  c.next = d;
+  d.next = e;
+ 
+  console.log(kthToLastNode(2, a)); //-> returns 'D' (the value on the second to last node)
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
