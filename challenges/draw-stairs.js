@@ -26,8 +26,9 @@ function drawStairs(n) {
             returnArr[k] = " " + returnArr[k];
         }
     }
-    return returnArr;
+    return returnArr.join('\n');
 }
+console.log(drawStairs(10));
 
 
 module.exports = drawStairs;

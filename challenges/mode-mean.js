@@ -12,7 +12,6 @@
 
 function modemean(array) {
     let arr = array.sort((a,b)=> a - b);
-    console.log(arr);
     let counts = {};
     let adds = 0;
     for(let i = 0; i < arr.length; i ++){
@@ -22,9 +21,7 @@ function modemean(array) {
         else 
             counts[arr[i]]++;
     }
-    console.log(counts);
     let meanCounts = counts[adds / arr.length];
-    console.log(meanCounts);
     if(!meanCounts)
         return false;
     let keys = Object.keys(counts);
@@ -34,6 +31,8 @@ function modemean(array) {
     }
     return true;
 }
+
+console.log(modemean([1,2,3]));
 
 
 
