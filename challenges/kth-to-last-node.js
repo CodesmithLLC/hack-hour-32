@@ -57,6 +57,7 @@ function kthToLastNode(k, head) {
     current = current.next;
   }
   let jumps = counter - k;
+  if (jumps < 0) return undefined;
   let output;
   current = head;
   while (jumps !== 0) {
@@ -69,6 +70,6 @@ function kthToLastNode(k, head) {
   // return kthToLastNode(k - 1, head.next);
 }
 
-console.log(kthToLastNode(4, a));
+console.log(kthToLastNode(14, a));
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
