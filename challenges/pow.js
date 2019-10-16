@@ -6,27 +6,32 @@ function pow(base, power) {
     if(base===undefined){
         return;
     }
-    if(power===undefined || power===0){//must apply L-Hopital's rule 0^0
+    if(power===undefined){//must apply L-Hopital's rule 0^0
         return;
     }
-    let result=1;
-    if(power<0){
+    if(power==0){
+        return 1;
+    }
+    else if(power==1){
+        return base;
+    }
+    // else if(0<power && power<1){
+
+    // }
+    else if(power<0){
         ///2 fractions
-        while(power<0){
-            result/=base;
-            power++;
-        }
+        //if(power<0){
+            return 1/(base)*pow(base,power+1)
+       // }
     }
     else{
-        while(power>0)
-        {
-            result*=base;
-            power--;
-        }
+        //if(power>0)
+        //{
+            return base*power(base,power-1);
+       // }
     }
-    return result;
 
 }
-
+console.log(pow(3,-2));
 
 module.exports = pow;
