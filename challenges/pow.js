@@ -2,13 +2,11 @@
  * Use recursion!
  */
 
- // Tail Call Recursion
+//  // Tail Call Recursion
 function pow(base, power, sum = 1) {
     if (power === 0) return sum;
-    return pow(base, power - 1, sum * base)
+
+    return power < 0 ? pow(base, power + 1, sum / base) : pow(base, power - 1, sum * base);
 }
 
 module.exports = pow;
-
-
-// console.log(pow(3, 3));
