@@ -2,11 +2,15 @@
  * Use recursion!
  */
 
-function pow(base, power, score=1) {
-    if (power === 0 ){
-        return score;
+function pow(base, power, score=1){
+    if(power === 0) return score;
+    if (power >= 0){
+      return pow(base, power- 1, score*base)
     }
-    return pow(base, power-= 1, score*base)
-}
-console.log(pow(3,4))
+    if (power <= 0){
+      return pow(base, power+1, score/base)
+    }
+  }
+  console.log(pow(8,-1))
+  console.log(pow(8,1))
 module.exports = pow;
