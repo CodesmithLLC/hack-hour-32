@@ -14,8 +14,22 @@
 */
 
 function drawStairs(n) {
-
+    let ast = '*';
+    let whiteSpace = ' ';
+    let stair = '';
+    for (let i = 1; i <= n; i++) {
+        for (let s = n - i - 1; s >= 0; s--) {
+            stair += whiteSpace;
+        }
+        for (let a = 1; a < i + 1; a++) {
+            stair += ast;
+        }
+        console.log(stair);
+        stair = '';
+    }
 }
+
+drawStairs(100);
 
 
 module.exports = drawStairs;
