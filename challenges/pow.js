@@ -12,6 +12,9 @@ function pow(base, power) {
     if (power > 0) {
         return base * pow(base, power - 1)
     } else {
+        if (base === 0) {
+            return "This calculation cannot be performed"
+        }
         return 1/base * pow(base, power + 1)
     }
 }
