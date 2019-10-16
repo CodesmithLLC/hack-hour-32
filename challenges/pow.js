@@ -10,10 +10,19 @@ function pow(base, power) {
         return;
     }
     let result=1;
-    while(power>0)
-    {
-        result*=base;
-        power--;
+    if(power<0){
+        ///2 fractions
+        while(power<0){
+            result/=base;
+            power++;
+        }
+    }
+    else{
+        while(power>0)
+        {
+            result*=base;
+            power--;
+        }
     }
     return result;
 
