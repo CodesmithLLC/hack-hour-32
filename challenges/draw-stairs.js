@@ -13,14 +13,23 @@
 */
 
 function drawStairs(n) {
-  let stairs = '';
-  if (n = 0) { return '*' }
-  else { return drawStairs(n - 1) };
+	function createSpaces(n) {
+		let spaceArray = [];
+		for (let i = 0; i < n; i++) {
+			spaceArray.push(' ');
+		}
+    	return spaceArray;
+	}
 
-  console.log(stairs);
+    spaceArray = createSpaces(n);
+	for (let i = n; i > 0; i--) {
+		spaceArray[n - 1] = '*';
+	}
+	console.log(spaceArray.join(''));
 }
 
-function drawStairs(5);
+// drawStairs(5);
+
 
 module.exports = drawStairs;
 
