@@ -23,13 +23,14 @@
     
 //     // in case the array has an odd amount of values, don't take the extra step to flip the middle value with itself
 //    while (steps > 0 && array[i] !== array[j]) {
-//         let headPlaceholder = array[i];
-//         // console.log(headPlaceholder);
-//         let tailPlaceholder = array[j];
-//         // console.log(tailPlaceholder);
+//         // let headPlaceholder = array[i];
+//         // let tailPlaceholder = array[j];
         
-//         array[i] = tailPlaceholder;
-//         array[j] = headPlaceholder;
+//         // array[i] = tailPlaceholder;
+//         // array[j] = headPlaceholder;
+
+//         // same as lines 26-30;
+//         [array[i], array[j]] = [array[j], array[i]];
 
 //         steps--;
 //         console.log(steps);
@@ -47,14 +48,10 @@ function reverseInPlace(array, i = 0, j = array.length - 1, steps = Math.ceil(ar
     // base case (same as end of while loop)
     if (steps === 0 && array[i] !== array[j]) return array;
 
-    // store the values
-    let headPlaceholder = array[i];
-    let tailPlaceholder = array[j];
-       
-    // flip the values
-    array[i] = tailPlaceholder;
-    array[j] = headPlaceholder;
+    // find the variables (starting head and tail), and flip them
+    [array[i], array[j]] = [array[j], array[i]];
 
+    // work inwards
     return reverseInPlace(array, i + 1, j - 1, steps - 1)
 }
 
