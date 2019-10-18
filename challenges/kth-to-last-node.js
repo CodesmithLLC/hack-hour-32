@@ -29,14 +29,19 @@ b.next = c;
 c.next = d;
 d.next = e;
 
+/* Node {
+  value: val;
+  next = null
+} */
+
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
 function kthToLastNode(k, head) {
-let resultArray = [];
-let currentNode = head.next;
+  let resultArray = [];
+  let currentNode = head.next;
 while (currentNode) {
   // console.log(currentNode)
   resultArray.push(currentNode.value)
