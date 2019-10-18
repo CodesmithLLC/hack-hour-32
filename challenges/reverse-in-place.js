@@ -13,8 +13,54 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
+// function reverseInPlace(array) {
+//     // loop through array; re-assign head and tail to each other; work way towards middle of array
+//     let i = 0;
+//     let j = array.length -1;
+//     // amount of times one needs to flip is equal to half of the array length rounded up
+//     let steps = Math.ceil(array.length / 2);
+//     // console.log(steps);
+    
+//     // in case the array has an odd amount of values, don't take the extra step to flip the middle value with itself
+//    while (steps > 0 && array[i] !== array[j]) {
+//         let headPlaceholder = array[i];
+//         // console.log(headPlaceholder);
+//         let tailPlaceholder = array[j];
+//         // console.log(tailPlaceholder);
+        
+//         array[i] = tailPlaceholder;
+//         array[j] = headPlaceholder;
 
+//         steps--;
+//         console.log(steps);
+//         i++;
+//         // console.log(i);
+//         j--;
+//         // console.log(j);
+//     }
+
+//     return array;
+// }
+
+
+function reverseInPlace(array, i = 0, j = array.length - 1, steps = Math.ceil(array.length / 2)) {
+    // base case (same as end of while loop)
+    if (steps === 0 && array[i] !== array[j]) return array;
+
+    // store the values
+    let headPlaceholder = array[i];
+    let tailPlaceholder = array[j];
+       
+    // flip the values
+    array[i] = tailPlaceholder;
+    array[j] = headPlaceholder;
+
+    return reverseInPlace(array, i + 1, j - 1, steps - 1)
 }
 
 module.exports = reverseInPlace;
+
+// const alphabet = ['a', 'b', 'c', 'd', 'e'];
+// const alphabet2 = ['a', 'b', 'c', 'd', 'e', 'f'];
+// console.log(reverseInPlace(alphabet));
+// console.log(reverseInPlace(alphabet2));
