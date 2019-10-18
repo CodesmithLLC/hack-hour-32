@@ -3,10 +3,10 @@
  */
 
 function pow(base, power) {
-  if (!power) {
-    return undefined;
-  }
-  
+  // if (Number.isNaN(power)) {
+  //   return undefined;
+  // }
+
   if (power === 0) {
     return 1;
   }
