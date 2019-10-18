@@ -12,9 +12,17 @@
  *
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
+// let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+
 
 function reverseInPlace(array) {
-
+    for (let i = 1; i < array.length; i += 1) {
+        let moved = array.splice(i, 1)[0];
+        array.unshift(moved);
+    }
+    // console.log(array);
 }
+
+// reverseInPlace(arr);
 
 module.exports = reverseInPlace;
