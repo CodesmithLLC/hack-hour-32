@@ -13,7 +13,7 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-// function reverseInPlace(array) {
+// function reverseInPlace(array) { 
 //     // loop through array; re-assign head and tail to each other; work way towards middle of array
 //     let i = 0;
 //     let j = array.length -1;
@@ -46,9 +46,10 @@
 
 function reverseInPlace(array, i = 0, j = array.length - 1, steps = Math.ceil(array.length / 2)) {
     // base case (same as end of while loop)
-    if (steps === 0 && array[i] !== array[j]) return array;
+    if (steps === 0) return array;
 
     // find the variables (starting head and tail), and flip them
+    // below method is called array deconstructing
     [array[i], array[j]] = [array[j], array[i]];
 
     // work inwards
