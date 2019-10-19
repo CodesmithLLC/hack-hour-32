@@ -11,12 +11,18 @@
  *              stringRotation("hello", "ollhe") -> false (not a rotation, just an anagram)
  */
 
+
+ //THIS SOLUTION IS WITH HELP FROM A FRIEND. I WOULDNT BE ABLE TO SOLVE IT IN THE TIMEFRAME
+
 function isSubstring(s1, s2) {
   return s1.indexOf(s2) >= 0;
 }
 
 function stringRotation(s1, s2) {
-
+let tempWord = s1+s1
+return isSubstring(tempWord,s2)
 }
+
+console.log(stringRotation('fox','oxf'))
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
