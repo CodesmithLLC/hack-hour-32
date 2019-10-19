@@ -16,13 +16,16 @@ function isSubstring(s1, s2) {
 }
 
 function rotateString(arr) {  
-  for (let i = 0; i < arr.length; i++) {
-    let placeholder1 = arr[i];
-    let placeholder2 = arr[arr.length -1];
+  // for (let i = 0; i < arr.length; i++) {
+  //   let placeholder1 = arr[i];
+  //   let placeholder2 = arr[arr.length -1];
 
-    arr[i] = placeholder2;
-    arr[arr.length - 1] = placeholder1;
-  }
+  //   arr[i] = placeholder2;
+  //   arr[arr.length - 1] = placeholder1;
+  // }
+
+  let newStr = arr.unshift(arr.pop());
+  console.log(arr)
 
   return arr;
 }
@@ -32,6 +35,10 @@ function rotateString(arr) {
 
 
 function stringRotation(s1, s2) {
+  if (s1.length === 0 || s2.length === 0 || s1.length !== s2.length) {
+    return false;
+  }
+
   const strArr1 = [...s1];
   const strArr2 = [...s2];
   // console.log(strArr1);
@@ -60,6 +67,9 @@ function stringRotation(s1, s2) {
 
   return false;
 }
+
+
+// console.log(isSubstring('hello', 'elloh'));
 
 // console.log(stringRotation("hello", "llohe"));
 // console.log(stringRotation("hello", "hlloe"));
