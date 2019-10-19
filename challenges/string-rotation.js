@@ -12,6 +12,9 @@
  */
 
 function isSubstring(s1, s2) {
+  // if indexOf returns - 1 -> that means NOT a substring
+
+  // if indexOf returns >= 0 (index) -> that means it's a substring
   return s1.indexOf(s2) >= 0;
 }
 
@@ -21,11 +24,11 @@ function stringRotation(s1, s2) {
 
   if(s1.length !== s2.length) return false;
 
-  else if(s1.length === s2.length && isSubstring(tempStr, s2)) {
-    return true;
-  }
+  return s1.length === s2.length && isSubstring(tempStr, s2) ? true : false;
+  
 }
 
 
 console.log(stringRotation("hello", "llohe"));
+console.log(stringRotation("hello", "ollhe"));
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
