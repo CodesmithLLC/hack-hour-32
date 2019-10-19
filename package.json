@@ -14,20 +14,28 @@
     "start": "export COHORT=32; node test/index.js"
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
     "async": "^1.4.2",
     "aws-sdk": "^2.2.24",
+    "config": "^1.30.0",
     "ejs": "^2.3.4",
     "expect.js": "^0.3.1",
     "mocha": "^2.2.5",
     "mocha-email-reporter": "1.0.2",
     "request": "^2.65.0",
-    "sendgrid": "^3.0.8",
-    "config": "^1.30.0",
-    "@sendgrid/mail": "^6.2.1"
+    "sendgrid": "^3.0.8"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CodesmithLLC/hack-hour-32.git"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0"
+  }
 }
