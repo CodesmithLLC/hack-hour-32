@@ -3,9 +3,8 @@
  */
 
 function pow(base, power) {
-    if (base === undefined || power === undefined) return 'Give me argumeeeents!';
-
-    return base ** power;
+    if (power === 0) return 1;
+    return base * pow(base, power - 1)
 }
 
 // console.log(pow(2, 3)) // 8 
