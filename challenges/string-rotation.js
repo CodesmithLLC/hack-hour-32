@@ -16,7 +16,31 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+  if (!s1 || !s2) return false;
+  if (s1.length !== s2.length) return false;
 
+  // For loop and invokation of isSubtring in the loop
+  // for (let i = 0; i < s1.length; i++) {
+  //   const lastChar = s2.slice(-1);
+  //   s2 = s2.slice(0, -1);
+  //   s2 = lastChar + s2;
+
+  //   // if (isSubstring(s1, s2)) return true;
+  //   if (s1.includes(s2)) return true;
+  // }
+  // return false;
+
+  // Double the initial string then check if target string is inside initial string
+  // if (s1.length === s2.length) {
+  // if (isSubstring(s1 + s1, s2)) return true;
+  if ((s1 + s1).includes(s2)) return true;
+  return false;
+  // }
 }
 
-module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
+console.log(stringRotation('hello', 'llohe'));
+console.log(stringRotation('hello', 'ollhe'));
+console.log(stringRotation('hello', 'hello'));
+console.log(stringRotation('hello', 'he'));
+
+module.exports = { isSubstring: isSubstring, stringRotation: stringRotation };
