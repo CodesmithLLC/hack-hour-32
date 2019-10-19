@@ -17,6 +17,24 @@ function isSubstring(s1, s2) {
 
 function stringRotation(s1, s2) {
 
+  if (s1 == s2) return true;
+
+  const arr1 = s1.split("");
+  const mid = arr1.length / 2;
+
+  const rotationFront = arr1.slice(0, mid);
+  const rotationBack = arr1.slice(mid, arr1.length);
+
+  const rotated1 = rotationBack.concat(rotationFront).join("").toString();
+
+  return rotated1 == s2; 
 }
+
+  /*
+console.log(stringRotation("hello", "llohe"));
+console.log(stringRotation("hello", "hello"));
+console.log(stringRotation("hello", "he"));
+console.log(stringRotation("hello", "ollhe"));
+  */
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
