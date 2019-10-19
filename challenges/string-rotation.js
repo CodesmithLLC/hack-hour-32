@@ -16,10 +16,10 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {	
-  const newArray = Array.from(s1);
-  newArray.unshift(newArray.pop());
-  let newString = newArray.join('');
-  return isSubstring(newString, s2);
+  // const newArray = Array.from(s1);
+  // newArray.unshift(newArray.pop());
+  // return isSubstring(newArray.join(''), s2);
+  return isSubstring(s1 + s1, s2);
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
