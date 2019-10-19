@@ -14,6 +14,7 @@
  */
 
 function reverseInPlace(array) {
+<<<<<<< HEAD
 //swap recursively above pivot recursively
 //until 
 //we can either recursively have an index, or simply iterate
@@ -30,5 +31,11 @@ return array;
 module.exports = reverseInPlace;
 
 
-//const arr=[1,2,3,5,6];
-//console.log(reverseInPlace(arr));
+const arr=['1','2','3','4','5','6'];
+console.log(reverseInPlace(arr));
+=======
+
+}
+
+module.exports = reverseInPlace;
+>>>>>>> 4933dc71e9a778b719f571f369fffd1346f3f5ee
