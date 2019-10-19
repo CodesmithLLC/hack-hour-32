@@ -26,13 +26,11 @@ function stringRotation(s1, s2) {
   const second = s2.split('');
   for (let i = 0; i < s2.length; i ++) {
     first.unshift(second.pop())
-    console.log(first)
-    console.log(first.concat(second).join(''))
     if (first.concat(second).join('') === s1) {
     return true
   }
 }
 return false;
-}
+}chst
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
