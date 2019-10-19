@@ -30,5 +30,5 @@ return array;
 module.exports = reverseInPlace;
 
 
-//const arr=[1,2,3,5,6];
-//console.log(reverseInPlace(arr));
+const arr=['1','2','3','4','5','6'];
+console.log(reverseInPlace(arr));
