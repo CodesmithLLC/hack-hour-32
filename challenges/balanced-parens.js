@@ -25,24 +25,40 @@
  */
 
 function balancedParens(input){
-	let stack = [];
-
-	let pairs = {
-		'{': '}',
-		'[': ']',
-		'(': ')',
-	};
-
-	for (let i = 0; i < input.length; i += 1) {
-		if (Object.keys(pairs).includes(input[i])) {
-			stack.push(input[i]);
-		} else if (pairs[stack[stack.length - 1]] === input[i]) {
-      		stack.pop()
-    	} else if (Object.values(pairs).includes(input[i])) {
-      		return false;
-    	}
-	}
-  return !stack.length;
+  var matches = {'[':']', '{':'}', '(':')'};
+  var brackets = [];
+  for (var i = 0; i < input.length; i++) {
+    char = input[i];
+    if (char in matches) {
+      brackets.push(char);
+    } else if (char === ']' || char === ')' || char === '}'){
+      if (matches[brackets.pop()] !== char){
+        return false;
+      }
+    }
+  }
+  return !brackets.length;
 }
+
+// function balancedParens(input){
+// 	let stack = [];
+
+// 	let pairs = {
+// 		'{': '}',
+// 		'[': ']',
+// 		'(': ')',
+// 	};
+
+// 	for (let i = 0; i < input.length; i += 1) {
+// 		if (Object.keys(pairs).includes(input[i])) {
+// 			stack.push(input[i]);
+// 		} else if (pairs[stack[stack.length - 1]] === input[i]) {
+//       		stack.pop()
+//     	} else if (Object.values(pairs).includes(input[i])) {
+//       		return false;
+//     	}
+// 	}
+//   return !stack.length;
+// }
 
 module.exports = balancedParens;
