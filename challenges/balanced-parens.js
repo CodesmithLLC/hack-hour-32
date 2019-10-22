@@ -25,7 +25,15 @@
  */
 
 function balancedParens(input){
-
+    const characterCounter = {count : 0};
+    for (let i = 0; i < input.length; i ++) {
+        if (input[i] === "(" || input[i] === "{" || input[i] === "[") {
+            characterCounter.count ++;
+        } else {
+            characterCounter.count --;
+        }
+    }
+    return characterCounter.count === 0 ? true : false;
 }
 
 module.exports = balancedParens;
