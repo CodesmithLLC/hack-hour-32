@@ -12,14 +12,15 @@
  */
 
 function isSubstring(s1, s2) {
-  return s1.indexOf(s2) >= 0;
+  	return s1.indexOf(s2) >= 0;
 }
 
-function stringRotation(s1, s2) {	
+function stringRotation(s1, s2) {
   // const newArray = Array.from(s1);
   // newArray.unshift(newArray.pop());
   // return isSubstring(newArray.join(''), s2);
-  return isSubstring(s1 + s1, s2);
+	if(s1.length != s2.length) { return false; }	
+  	return isSubstring(s1 + s1, s2);
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
