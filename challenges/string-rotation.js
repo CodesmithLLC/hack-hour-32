@@ -15,8 +15,15 @@ function isSubstring(s1, s2) {
   return s1.indexOf(s2) >= 0;
 }
 
-function stringRotation(s1, s2) {
+console.log(isSubstring('hello', 'hel'))
 
+function stringRotation(s1, s2) {
+  if (s1.length !== s2.length) return false
+  let s1Twice = s1+s1
+  console.log(s1Twice)
+  return isSubstring(s1Twice, s2)
 }
+
+console.log(stringRotation('hello', 'hlelo'))
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
