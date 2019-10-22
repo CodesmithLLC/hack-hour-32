@@ -25,22 +25,24 @@
  */
 
 function balancedParens(input){
+    let newInput = input.replace(/[^(){}\[\]]/g, '')
+    console.log(newInput)
     let stack = [];
     let map = {
         '(': ')',
         '[': ']',
         '{': '}'
     }
-    for (let i = 0; i < input.length; i++) {
+    for (let i = 0; i < newInput.length; i++) {
         //if it has an opening brace, add it to the stack
-        if (input[i] === '(' || input[i] === '{' || input[i] === '[') {
-            stack.push(input[i]);
+        if (newInput[i] === '(' || newInput[i] === '{' || newInput[i] === '[') {
+            stack.push(newInput[i]);
         }
         //if it has a closing brace, remove it from the stack
         else {
             let closing = stack.pop();
             //match with partner in 'map'
-            if (input[i] !== map[closing]) {
+            if (newInput[i] !== map[closing]) {
                 return false;
             }
         }
@@ -54,3 +56,4 @@ module.exports = balancedParens;
 console.log(balancedParens('[](){}')); // true
 console.log(balancedParens('[({})]'));   // true
 console.log(balancedParens('[(]{)}')); // false
+console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
