@@ -23,9 +23,42 @@
  *
  *
  */
-
 function balancedParens(input){
-
-}
+    input = input.replace(/[a-z0-9]/gi,"")
+    console.log(input)
+    input = input.split("");
+    let stack = [];
+    for(let i = 0; i < input.length; i++){
+        
+        if(input[i] == "(" || input[i] == "[" || input[i] == "{"){
+            stack.push(input[i]);
+        }
+        else if(input[i] == "]" ){
+            if(stack[stack.length-1] != "["){
+                return false;
+            }
+            else{
+                stack.pop();
+            }
+        }
+         else if(input[i] == ")" ){
+            if(stack[stack.length-1] != "("){
+                return false;
+            }
+            else{
+                stack.pop();
+            }
+        }
+         else if(input[i] == "}"){
+            if(stack[stack.length-1] != "{"){
+                return false;
+            }
+            else{
+                stack.pop();
+            }
+        }
+        }
+    return true;
+    }
 
 module.exports = balancedParens;
