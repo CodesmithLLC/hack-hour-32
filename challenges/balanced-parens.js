@@ -25,15 +25,34 @@
  */
 
 function balancedParens(input){
-    const characterCounter = {count : 0};
+    const stack = [];
     for (let i = 0; i < input.length; i ++) {
-        if (input[i] === "(" || input[i] === "{" || input[i] === "[") {
-            characterCounter.count ++;
-        } else {
-            characterCounter.count --;
+        if (input[i] === "[" || input[i] === "(" || input[i] === "{") {
+            stack.push(input[i])
         }
-    }
-    return characterCounter.count === 0 ? true : false;
+        if (input[i] === "}") {
+            if (stack.pop() !== "{") {
+                return false;
+            }
+        }
+        if (input[i] === "]") {
+            if (stack.pop() !== "[") {
+                return false;
+            }
+        }
+        if (input[i] === ")") {
+            if (stack.pop() !== "(") {
+                return false
+            }
+        }
 }
+if (stack.length === 0) {
+    return true;
+} else {
+    false;
+}
+}
+
+console.log(balancedParens("{[]}[(])"))
 
 module.exports = balancedParens;
