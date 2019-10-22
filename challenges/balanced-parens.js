@@ -25,7 +25,13 @@
  */
 
 function balancedParens(input){
-
+    let charCount = input.split('').reduce((acc, current) => {
+        if(acc[current]){acc[current]++}
+        else(acc[current] = 1)
+        return acc;
+    }, {})
+    if(charCount['{'] === charCount['}'] && charCount['('] === charCount[')'] && charCount['['] === charCount[']']){ return true }
+    else{ return false }
 }
 
 module.exports = balancedParens;
