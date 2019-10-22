@@ -26,6 +26,7 @@
 
 function balancedParens(input){
     const stack = [];
+
     for (let i = 0; i < input.length; i ++) {
         if (input[i] === "[" || input[i] === "(" || input[i] === "{") {
             stack.push(input[i])
@@ -49,10 +50,10 @@ function balancedParens(input){
 if (stack.length === 0) {
     return true;
 } else {
-    false;
+    return false;
 }
 }
 
-console.log(balancedParens("{[]}[(])"))
+console.log(balancedParens("[fsadfa(asdfadsfa{}adsfadf)afsdfadfafd]"))
 
 module.exports = balancedParens;
