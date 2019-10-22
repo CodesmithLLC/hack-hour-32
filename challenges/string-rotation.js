@@ -40,9 +40,9 @@ function stringRotation(s1, s2) {
 
 }
 
-console.log(stringRotation("hello", "ollhe")) // F
+//console.log(stringRotation("hello", "ollhe")) // F
 //console.log(`should be true`, stringRotation("hello", "hello")) // T
-//console.log(`stringRot 1 should be true : `, stringRotation("hello", "llohe")) // T
+console.log(`stringRot 1 should be true : `, stringRotation("hello", "llohe")) // T
 //console.log(`stringRot 2 should be false: `, stringRotation("hello", "he")) // F
 
 module.exports = { isSubstring: isSubstring, stringRotation: stringRotation };
