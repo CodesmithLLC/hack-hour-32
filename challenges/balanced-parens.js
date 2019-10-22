@@ -25,6 +25,7 @@
  */
 
 function balancedParens(input){
+	console.log(input);
 	let stack = [];
 
 	let pairs = {
@@ -42,6 +43,7 @@ function balancedParens(input){
       		return false;
     	}
 	}
+	console.log(stack);
   return stack.length === 0;
 }
 
