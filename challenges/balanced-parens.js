@@ -24,8 +24,137 @@
  *
  */
 
-function balancedParens(input){
+function balancedParens(input) {
+  const bracketContainer = [];
+  let truthRunner = false;
 
+  if (input.length <= 1) return truthRunner;
+
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === '(') bracketContainer.push(')');
+    else if (input[i] === ')') {
+      if (bracketContainer[bracketContainer.length - 1] === input[i]) {
+        truthRunner = true;
+        bracketContainer.pop();
+      } else {
+        truthRunner = false;
+        break;
+      }
+    }
+    if (input[i] === '[') bracketContainer.push(']');
+    else if (input[i] === ']') {
+      if (bracketContainer[bracketContainer.length - 1] === input[i]) {
+        truthRunner = true;
+        bracketContainer.pop();
+      } else {
+        truthRunner = false;
+        break;
+      }
+    }
+    if (input[i] === '{') bracketContainer.push('}');
+    else if (input[i] === '}') {
+      if (bracketContainer[bracketContainer.length - 1] === input[i]) {
+        truthRunner = true;
+        bracketContainer.pop();
+      } else {
+        truthRunner = false;
+        break;
+      }
+    }
+  }
+
+  if (bracketContainer.length > 0) truthRunner = false;
+
+  return truthRunner;
 }
+console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }'));
+console.log(balancedParens(' var hubble = function() { telescopes.awesome();'));
+
+console.log(balancedParens('[]'));
+console.log(balancedParens('{}'));
+console.log(balancedParens('{}[]()'));
+console.log(balancedParens('[({})]'));
+console.log(balancedParens('[(]{)}'));
+console.log(balancedParens('[[{{}}()]{}]'));
+
+console.log(balancedParens('()'));
+console.log(balancedParens('('));
+console.log(balancedParens('(()'));
+console.log(balancedParens('(())'));
+console.log(balancedParens(')('));
+console.log(balancedParens('(()))()'));
+console.log(balancedParens('(((()())))'));
 
 module.exports = balancedParens;
+
+// Parenthesis Only
+//
+// function balancedParens(input) {
+//   const bracketContainer = [];
+//   let truthRunner = false;
+
+//   if (input.length <= 1) return truthRunner;
+
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] === '(') bracketContainer.push(')');
+//     else if (input[i] === ')') {
+//       if (bracketContainer[bracketContainer.length - 1] === input[i]) {
+//         truthRunner = true;
+//         bracketContainer.pop();
+//       } else {
+//         truthRunner = false;
+//         break;
+//       }
+//     }
+//   }
+
+//   if (bracketContainer.length > 0) truthRunner = false;
+
+//   return truthRunner;
+// }
+
+//With other bracket types
+//
+// function balancedParens(input) {
+//   const bracketContainer = [];
+//   let truthRunner = false;
+
+//   if (input.length <= 1) return truthRunner;
+
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] === '(') bracketContainer.push(')');
+//     else if (input[i] === ')') {
+//       if (bracketContainer[bracketContainer.length - 1] === input[i]) {
+//         truthRunner = true;
+//         bracketContainer.pop();
+//       } else {
+//         truthRunner = false;
+//         break;
+//       }
+//     }
+//     if (input[i] === '[') bracketContainer.push(']');
+//     else if (input[i] === ']') {
+//       if (bracketContainer[bracketContainer.length - 1] === input[i]) {
+//         truthRunner = true;
+//         bracketContainer.pop();
+//       } else {
+//         truthRunner = false;
+//         break;
+//       }
+//     }
+//     if (input[i] === '{') bracketContainer.push('}');
+//     else if (input[i] === '}') {
+//       if (bracketContainer[bracketContainer.length - 1] === input[i]) {
+//         truthRunner = true;
+//         bracketContainer.pop();
+//       } else {
+//         truthRunner = false;
+//         break;
+//       }
+//     }
+//   }
+
+//   if (bracketContainer.length > 0) truthRunner = false;
+
+//   return truthRunner;
+// }
