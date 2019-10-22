@@ -13,12 +13,26 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
-    const newArr = []; 
-    for (let i=array.length-1; i>=0; i--){
-        newArr.push(array[i])
+// function reverseInPlace(array) {
+//     const newArr = []; 
+//     for (let i=array.length-1; i>=0; i--){
+//         newArr.push(array[i])
+//     }
+//     return newArr;
+// }
+// function reverseInPlace(array){
+//     for (let i=0; i<array.length /2; i++){
+//     let placeHolder = array[i];
+//     array[i] = array[array.length-1-i];
+//     array[array.length-1-i] = placeHolder
+//     }
+//     return array
+// }
+function reverseInPlace(array){
+    for (let i=0;i<array.length/2; i++){
+        [[array[i]],[array[array.length-1-i]]] = [[array[array.length-1-i]],[array[i]]]
     }
-    return newArr;
+    return array
 }
 console.log(reverseInPlace(['h','a','p','p','y']))
 console.log(reverseInPlace([1,2,3,4,5]))
