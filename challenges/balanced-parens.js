@@ -27,6 +27,7 @@
 function balancedParens(input){
 //balanced brackets..
 //we assume inputs are all brackets or undefined
+//input=JSON.stringify(input);
 if(input===undefined){
     return;
 }
@@ -48,9 +49,11 @@ else{
     }
     else if(input.charAt(0)!=='{' && input.charAt(0)!=='[' && input.charAt(0)!=='('){
         //substring until next 
+        console.log(input);
         return balancedParens(input.substring(1));
     }
     else if(input.charAt(input.length-1)!=='}' && input.charAt(input.length-1)!==']' && input.charAt(input.length-1)!==')'){
+        console.log(input);
         return balancedParens(input.substring(0,input.length-1));
     }
     else{
