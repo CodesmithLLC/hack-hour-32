@@ -27,20 +27,28 @@ const parens = {'(' : ')', '{' : '}', '[' : ']'};
 
 function balancedParens(input) {
     const stack = [];
+    const secondStack = [];
+
     for (let i = 0; i < input.length; i += 1) {
-        if (input[i] === '(' || input[i] === '[' || input[i] === '{' ) {
+        if (input[i] === '(' || input[i] === '[' || input[i] === '{' || input[i] === ')' || input[i] === ']' || input[i] === '}' ) {
             stack.push(input[i]);
-        } else {
-            let popped = stack.pop();
-            if (input[i] !== parens[popped]) return false;
         }
     }
-    if (stack.length !== 0) return false;
+    console.log(stack)
+    for (let i = 0; i < stack.length; i += 1) {
+        if (stack[i] === '(' || stack[i] === '[' || stack[i] === '{' ) {
+            secondStack.push(stack[i]);
+        } else {
+            let popped = secondStack.pop();
+            if (stack[i] !== parens[popped]) return false;
+        }
+    }
+    if (secondStack.length !== 0) return false;
     return true;
 }
 
 
-console.log(balancedParens('[(]{)}'))
+console.log(balancedParens(' var hubble = function() { telescopes.awesome();'))
 
 
 module.exports = balancedParens;
