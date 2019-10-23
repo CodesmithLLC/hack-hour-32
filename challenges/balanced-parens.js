@@ -24,8 +24,8 @@
  *
  */
 function balancedParens(input){
-    input = input.replace(/[a-z0-9]/gi,"")
-    console.log(input)
+    input = input.replace(/[a-z0-9]/gi,"");
+    
     input = input.split("");
     let stack = [];
     for(let i = 0; i < input.length; i++){
@@ -58,6 +58,9 @@ function balancedParens(input){
             }
         }
         }
+    if(stack.length!=0){
+      return false;
+    }
     return true;
     }
 
