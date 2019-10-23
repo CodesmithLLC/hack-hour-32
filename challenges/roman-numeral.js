@@ -63,15 +63,18 @@ function inner(starting){ //access to starting, we know the places...up until 1'
         //if it's a 4 we must add the previous 10's place appended and then the current 5 place(eg 50)
         result+=RomanMap[starting-1]+RomanMap[starting];//concat the next 10s or 100s before the next 50 or 500 together for a 4
         n-=currentPlace;
-        
-        return inner(starting-2);
+        console.log(n);
+        console.log(result);
+        return result+ inner(starting-2);
     }
     else if(n/currentPlace===9){
         result+=RomanMap[starting]+RomanMap[starting-2];
      
         n-=currentPlace;
         n-=places[starting-2];
-        return inner(starting-3);
+        console.log(n);
+        console.log(result);
+        return result+inner(starting-3);
     }
     else if(n/currentPlace===2 || n/currentPlace===3){//2,3,
         //if it's a 2,3we concat the previous counter 
@@ -82,7 +85,9 @@ function inner(starting){ //access to starting, we know the places...up until 1'
 
         n-=currentPlace;
         n-=places[starting-2];
-        return inner(starting-3);
+        console.log(n);
+        console.log(result);
+        return result+inner(starting-3);
 
     }
     else if(n%currentPlace===0){
@@ -93,12 +98,16 @@ function inner(starting){ //access to starting, we know the places...up until 1'
         }
         n-=currentPlace;
         n-=places[starting-1];
-        return inner(starting-2);
+        console.log(n);
+        console.log(result);
+        return result+inner(starting-2);
 
     }
     else{
         result+=RoamnMap[currentPlace];
         n=n-currentPlace;
+        console.log(n);
+        console.log(result);
     }
 
     //result+=RomanMap[currentPlace];
@@ -113,7 +122,8 @@ function inner(starting){ //access to starting, we know the places...up until 1'
 }
 //recursively append... divide it by 10 modulus
 
-
+console.log(n);
+console.log(result);
 return inner; //return function definition 
 }
 
