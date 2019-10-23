@@ -16,7 +16,7 @@
  *      1000  ->    M
  * 
  */
-
+// This version converts both numbers and roman numerals to the opposite option.
 function romanNumeral(n) {
     if(typeof(n) === "number"){
         let numeralObj = {
