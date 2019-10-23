@@ -24,8 +24,29 @@
  *
  */
 
+
+ //if there is an open and closing paren - true
+ //if there isn't closing paren
+
 function balancedParens(input){
 
 }
 
 module.exports = balancedParens;
+
+let regexL = (/\)/g)
+let regexR = (/\(/g)
+let testString = "(303)5(55)-1212";
+let foundLeft = regexL.exec(testString);
+let foundRight = regexR.exec(testString);
+
+console.log('Lefties',foundLeft);
+console.log('Righties', foundRight);
+
+console.log('Search', testString.search(/\)/g))
+
+
+
+// PluginArray
+// Loop and Find the indexes of the left ones , replace it with temp Symbol
+//

@@ -18,7 +18,45 @@
  */
 
 function romanNumeral(n) {
+  
+    const romans = [
+    {1000: 'M'},
+        {900: 'CM'},
+        {500: 'D'},
+        {400: 'CD'},
+        {100: 'C'},
+        {90: 'XC'},
+        {50: 'L'},
+        {40: 'XL'},
+        {10: 'X'},
+        {9: 'X'},
+        {5: 'V'},
+        {4: 'IV'},
+        {1: 'I'},
+    ]
 
+
+    let string = '';
+    if (n === Number(Object.keys(romans[0]))) {
+    string = (Object.values(romans[0])).toString()
+    return string
+    }
+    else  {
+        for (let i = 0; i < romans.length; i++) {
+        if (n > Number(Object.keys(romans[i]))) {
+            console.log('n: ', n, 'string: ', string, 'The roman key: ', Number(Object.keys(romans[i])))
+
+            string+= (Object.values(romans[0])).toString()
+            
+            return romanNumeral(n - Object.keys(romans[i]))
+        }
+        
+        }
+        
+    }
+    console.log(string)
 }
+
+console.log(romanNumeral(10001))
 
 module.exports = romanNumeral;
