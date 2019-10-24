@@ -57,7 +57,7 @@ function balancedParens(input){
                 console.log(count);
                 i += 2;
                 console.log(i);
-                break
+                break;
             } if (filteredInput[i] === key && filteredInput[filteredInput.length - 1] === paranPairs[key]) {
                 count++;
                 console.log(count);
