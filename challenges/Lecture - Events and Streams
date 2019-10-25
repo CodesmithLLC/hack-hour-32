@@ -1,0 +1,44 @@
+Lecture - Events / Streams
+--------------------------
+
+Streams - A way to handle large amounts of data 
+	Data is handled in partial chunks, managed incrementally
+
+	Goal: limiting buffering of information
+
+	Streams are event emitters that have a specific API
+		Readable Streams - 
+			Events: 'data', 'end', 'close', 'error'
+			Method: pause(), resume(), destroy(), pipe()
+		Writable Streams -
+			Events; 'pipe', 'drain', 'close', 'error'
+			Methods: write(), end(), destroy()
+
+		Basic Streams: stdin / stdout of a process (input / output)
+			Process: instance of a program and the environment it is running in
+			process is an object
+
+			ex.	rewriting console.log
+
+				const questions = [...];
+				const answers = [];
+
+				function ask(questionIndex) {											// process.stdout is the terminal (console)
+				process.stdout.write(`${questions[questionIndex]}`)
+				}
+
+				process.stdin.on('data', (data) => {
+					answers.push(data);
+
+					if (answers.length < questions.length) {
+						ask(answers.length);
+					} else {
+						process.exit();
+					}
+				});
+
+				process.on('exit', () => {
+					process.stdout.write(`/n/n --- Process Ended --- /n/n`);
+				});
+
+				ask(0);

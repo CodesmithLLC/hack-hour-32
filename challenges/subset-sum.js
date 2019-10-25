@@ -9,7 +9,23 @@
  */
 
 function subsetSum(array, target) {
+    let flag = false;
+    if (array.length === 0) {return false}
 
+    let total = array.reduce((acc, el) => {
+      return acc + el;
+    });
+
+    if (total === target) {return true}
+
+    for(let i = 0; i < array.length; i += 1) {
+      let newArray = [...array];
+      newArray.splice(i, 1)
+      console.log(newArray);
+      flag = subsetSum(newArray, target)
+      if (flag) {return true}
+    }
+    return flag;
 }
 
 module.exports = subsetSum;
