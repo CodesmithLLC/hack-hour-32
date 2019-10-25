@@ -18,7 +18,33 @@
  */
 
 function romanNumeral(n) {
-
+    let obj = {
+        //need to start at the top because it was only doing 'I' * n
+        M: 1000,
+        CM: 900,
+        D: 500,
+        CD: 400,
+        C: 100,
+        XC: 90,
+        L: 50,
+        XL: 40,
+        X: 10,
+        IX: 9,
+        V: 5,
+        IV: 4,
+        I: 1,
+    }
+    let romanStr = '';
+    for (let i in obj) {
+        while (n >= obj[i]) { //while n is greater than or equal to the object value
+            romanStr += i; //add that i value to the string
+            n -= obj[i]; //decrement n 
+        }
+    }
+    return romanStr;
 }
-
+// console.log(romanNumeral(1))
+console.log(romanNumeral(37))
+// console.log(romanNumeral(999))
+// console.log(romanNumeral(1146))
 module.exports = romanNumeral;
