@@ -11,6 +11,6 @@ function pow(base, power) {
     return base * pow(base, power -= 1);
   }
 }
-console.log(pow(10, 4));
+console.log(pow(2, 5));
 
 module.exports = pow;
