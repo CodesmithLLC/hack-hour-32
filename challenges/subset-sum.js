@@ -15,13 +15,14 @@ function subsetSum(array, target) {
     for(let i = 1; i < array.length; i++){
         let newSums = [array[i]];
         for(let j = 0; j < sums.length; j++){
+            if(sums[j] + array[i] === target) 
+                return true;
             newSums.push(sums[j] + array[i]);
         }   
         sums = sums.concat(newSums);
-        if(sums.includes(target))
-            return true;
     }
     return false;
 }
 
+console.log(subsetSum([8, -2, 1, -3], 6));
 module.exports = subsetSum;
