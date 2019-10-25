@@ -32,8 +32,23 @@ function subsetSum(array, target) {
     //we are going to iterate the array and pass the recursive calls with the remaining
     for(let i=0;i<array.length;i++){
         let el=array[i]; //recursive call each element of array
-        return subsetSum(Array.prototype.concat(array.splice(0,i),array.splice(i+1)),target-el); //recrusive call graph tree should short circuit when target goes  offset negative
+        target-=el;
+
+        //for permutations we want to encapsulate the element el yet return the short circuit or the latter
+        function inner(){
+
+            return target===0 || subsetSum(Array.prototype.concat(array.splice(0,i),array.splice(i+1)),target-el); //recrusive call graph tree should short circuit when target goes  offset negative
+        }
+
+
+
+
+
+
+       
     }
+
+    return inner;
     //with a subcuttof off the array graph tree 
 }
 
