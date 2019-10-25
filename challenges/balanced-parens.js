@@ -25,49 +25,49 @@
  */
 
 function balancedParens(input){
-    const newBalanced = [];
-    const count1 = 0;
-    const count2 = 0;
-    const count3 = 0;
-    // const balanced = {
-    //     '(' : ')'
-    // }
-    const paired = ['(',')']
-    for (let i=0; i<input.length; i++){
-        if (input[i] === paired[0] &&)
+    const arr = [];
+    const obj = {
+    '(' : ')',
+    '[' : ']',
+    '{' : '}'
     }
-    // for (let i=0; i<input.length; i++){
-    //     if (input[i] == '[' || input[i] == '{' || input[i] == '('){
-    //         newBalanced.push(input[i]);
-    //         if (input[i] == ']' || )
-    //     }else if (){
+    for (let i=0; i<input.length; i++){
+        for (let keys in obj){
+            if(input[i] === keys){
+                arr.push(input[i])
+            }
+        }
+        if (obj[input] === input[i]){
+            arr.pop()
+        }
+    }
+    return arr.length === 0;
 
-    //     }
-    // }
-    // const balancedPair = ['{','}','[',']','(',')']
-    // for (let i=0; i<input.length; i++){
-    //     for (let keys in balanced){
-    //         if (input[i]=== keys){
-    //             count1++
-    //             if (input.includes(balanced[keys])){
 
-    //             }
-    //         }else{
 
-    //         }
-    //     }
-    // }
-    // for (let i=0; i<input.length; i++){
-    //     for (let keys in balanced){
-    //         if (input[i] === keys){
-    //             for (let j=i+1; j<input.length; j++){
-    //                 if (input)
-    //             }
-    //         }
-    //     }
-    // }
+
+
+
+
+
+
+
+// for (let i=0; i<input.length; i++){
+//     for (let keys in obj){
+//         if (input[i] === keys){
+//             arr.push(input[i])
+//         } 
+//     }
+//     if (obj[arr[arr.length-1]] === input[i]){
+//         arr.pop()
+//     }
+// }
+// if (arr.length === 0){
+//     return true;
+// }
+// return false;
 }
-console.log(balancedParens('[](){}'));
+console.log(balancedParens('[]()difjqwkajdfklsdf{}'));
 console.log(balancedParens('[({})]'));
-console.log(balancedParens('[(]{)}')); // false
+console.log(balancedParens('[(]{)}'));
 module.exports = balancedParens;
