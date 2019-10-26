@@ -8,19 +8,11 @@
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
  */
 
-function subsetSum(array, target,i=0) {
-    let count = 0;
-    const sorted = array.sort((a,b)=> a-b)
-    console.log(sorted)
-    for (let i=0; i<sorted.length; i++){
-        if (sorted[i] <= target && count <=target){
-            // target = target - sorted[i];
-            count += sorted[i]
-        }else if (sorted[i] > target){
-            continue;
-        }
-    }
-    // return target
+function subsetSum(array, target) {
+    // for (let i=0; i<array.length; i++){
+        
+    // }
+    // // return target
     // for (let i=0; i<array.length; i++){
     //     if (array[i] <= target){
     //         target = target - array[i];
