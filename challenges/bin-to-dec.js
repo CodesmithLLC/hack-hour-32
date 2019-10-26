@@ -14,7 +14,18 @@
  */
 
 function binToDec(binary) {
-
+    //reverse the string and then increment normally?
+    let split = binary.split('');
+    let reverseArray = split.reverse();
+    var joinedArray = reverseArray.join("");
+    let sum = 0;
+    for (let i = 0; i < joinedArray.length; i++) {
+        if (joinedArray[i] === '1') {
+            sum += 1 * Math.pow(2, i);
+        }
+    }
+    return sum;
 }
+
 
 module.exports = binToDec;
