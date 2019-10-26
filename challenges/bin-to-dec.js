@@ -49,17 +49,27 @@ function decToBin(dec){
     for(let i=0;cop>1;i++){
         g=i;
         cop/=2;
+        // console.log("cop"+cop);
+        // console.log("g:"+g);
     }//g is the number of positions 
 
     //
     for(let w=g;w>=0;w--){
+    
         let potential=Math.pow(2,w);
-        if(dec-potential>0){
+        // console.log("w "+w);
+        // console.log("potent"+potential);
+        if(dec-potential>=0){
+            
+        
             dec-=potential;
+            // console.log("dec: "+dec)
             result+="1";
+            // console.log(result);
         }
         else{
             result+="0";
+            // console.log(result);
         }
     }
 
