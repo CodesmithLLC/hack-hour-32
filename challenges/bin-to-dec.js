@@ -14,7 +14,14 @@
  */
 
 function binToDec(binary) {
-
+    let tick = 2 ** (binary.length - 1);
+    let output = 0;
+    for(let i = 0; i < binary.length; i++){
+        if(binary[i] === '0') output += 0
+        else if(binary[i] === '1') output += tick;
+        tick = tick === 1 ? 0 : tick /= 2;
+    }
+    return output;
 }
 
 module.exports = binToDec;
