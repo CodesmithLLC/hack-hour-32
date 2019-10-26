@@ -13,8 +13,26 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
+const tester = '111'
+
 function binToDec(binary) {
+//turn input into an array
+const array = binary.split('');
+const array2 = [];
+for (let i = 0; i<array.length; i++) {
+    array2.push(parseInt(array[i]))
+    }
+
+let total = 0;
+
+for (let j = 0; j < array2.length; j++) {
+total = total * 2 + array2[j]; 
 
 }
+return total
+   
+}
+
+console.log(binToDec(tester))
 
 module.exports = binToDec;
