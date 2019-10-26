@@ -9,7 +9,28 @@
  */
 
 function subsetSum(array, target) {
-
+    const mySet = new Set([])
+    for (let i = 0; i < array.length; i++) {
+        console.log(mySet);
+        if (mySet.has(array[i])) {
+            return true;
+        } else {
+            mySet.add(target - array[i]);
+            let total = array[i];
+            for (let j = i + 1; j < array.length; j++) {
+                total += array[j]
+                mySet.add(target - total);
+            }
+        }
+    }
+    return false;
 }
+
+// console.log('Should be true, actual is >> ', subsetSum([3, 7, 4, 2], 5))
+console.log('Should be true, actual is >> ', subsetSum([3, 34, 4, 12, 5, 12], 32))
+// console.log('Should be false, actual is >> ', subsetSum([8, 2, 4, 12], 13))
+// console.log('Should be true, actual is >> ', subsetSum([8, -2, 1, -3], 6))
+
+
 
 module.exports = subsetSum;

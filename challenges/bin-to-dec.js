@@ -14,7 +14,15 @@
  */
 
 function binToDec(binary) {
-
+    const binaryArr = binary.split('');
+    let decimal = 0;
+    for (let i = 0; i < binaryArr.length; i++) {
+        decimal += binaryArr[i] * (2**(binaryArr.length-i-1))
+    }
+    return decimal;
 }
+
+
+console.log(binToDec('1000'));
 
 module.exports = binToDec;
