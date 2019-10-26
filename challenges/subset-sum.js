@@ -14,9 +14,7 @@ function subsetSum(array, target) {
     }
     console.log(target);
     console.log(array);
-    if(target<0 && array.length===0){   
-        return false;//bad option
-    }
+  
     if(target===0){
         return true;
     }
@@ -36,14 +34,11 @@ function subsetSum(array, target) {
 
         //for permutations we want to encapsulate the element el yet return the short circuit or the latter
         function inner(){
-
-            return target===0 || subsetSum(Array.prototype.concat(array.splice(0,i),array.splice(i+1)),target-el); //recrusive call graph tree should short circuit when target goes  offset negative
+            console.log(target);
+            console.log(array);
+            let result= target===0 || subsetSum(Array.prototype.concat(array.splice(0,i),array.splice(i+1)),target-el); //recrusive call graph tree should short circuit when target goes  offset negative
+        
         }
-
-
-
-
-
 
        
     }
@@ -54,6 +49,7 @@ function subsetSum(array, target) {
 
 module.exports = subsetSum;
 
+let z=subsetSum([3, 7, 4, 2], 5);
 
 
-console.log(subsetSum([3, 7, 4, 2], 5));
+console.log(z.inner());
