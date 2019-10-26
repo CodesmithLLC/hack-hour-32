@@ -78,7 +78,68 @@ function decToBin(dec){
 }
 
 function decToHex(dec){
+ //same thing but base 16
+
+ let result="";
+ if(dec===undefined || dec.length===0){
+     return;
+ }
+
+ //get g, the largest factor of 2 exponent that goes into the number(cap)
+ let g=0;
+ let cop=dec;
+ for(let i=0;cop>1;i++){
+     g=i;
+     cop/=16;
+     // console.log("cop"+cop);
+     // console.log("g:"+g);
+ }//g is the number of positions 
+
+ //
+ for(let w=g;w>=0;w--){
  
+     let potential=Math.pow(16,w);
+     // console.log("w "+w);
+     // console.log("potent"+potential);
+     if(dec-potential>=0){
+         
+     
+         dec-=potential;
+         // console.log("dec: "+dec)
+
+
+         if(w===10){
+            result+="A";
+         }
+         else if(w===11){
+            result+="B";
+         }
+         else if(w===12){
+            result+="C";
+         }
+         else if(w===13){
+            result+="D";
+         }
+         else if(w===14){
+            result+="E";
+         }
+         else if(w===15){
+            result+="F";
+         }
+         else{
+            result+=w;
+         }
+         
+         // console.log(result);
+     }
+     else{
+         result+="0";
+         // console.log(result);
+     }
+ }
+
+
+ return result;
 
 
 }
@@ -89,5 +150,7 @@ function decToHex(dec){
 // console.log(binToDec('0101'));
 
 
-console.log(decToBin('10'));
+// console.log(decToBin('10'));
+// console.log(decToBin('5'));
+
 module.exports = binToDec;
