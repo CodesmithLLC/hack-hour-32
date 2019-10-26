@@ -44,6 +44,7 @@ function romanNumeral(n) {
     return res;
 }
 //console.log(romanNumeral(0)) // 'nulla'
+//console.log(romanNumeral(3))
 //console.log(romanNumeral(111)) // CXI
 //console.log(romanNumeral(1234)) // MCCXXXIV
 
