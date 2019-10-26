@@ -20,22 +20,15 @@ function binToDec(binary) {
         return;
     }
 
-
     let result=0;
     for(let i=0;i<binary.length;i++){
         //the twos match the decimal
         let el=binary[i];
-        let addition=1;
-        if(el==='1'){ //2^3 is 8
+        if(el==1){ //2^3 is 8
             
-            for(let g=1;g<=i;g++){
-                addition*=2;
-            }
-            result+=addition;
-            addition=1
+            result+=Math.pow(2,i);
         }
-
-        else if(el==='0'){
+        else if(el==0){
             continue;
         }
       
@@ -44,8 +37,47 @@ function binToDec(binary) {
 }
 
 
-console.log(binToDec('11')); // -> 3
-console.log(binToDec('100'));
-console.log(binToDec('101'));
-console.log(binToDec('0101'));
+function decToBin(dec){
+    let result="";
+    if(dec===undefined || dec.length===0){
+        return;
+    }
+
+    //get g, the largest factor of 2 exponent that goes into the number(cap)
+    let g=0;
+    let cop=dec;
+    for(let i=0;cop>1;i++){
+        g=i;
+        cop/=2;
+    }//g is the number of positions 
+
+    //
+    for(let w=g;w>=0;w--){
+        let potential=Math.pow(2,w);
+        if(dec-potential>0){
+            dec-=potential;
+            result+="1";
+        }
+        else{
+            result+="0";
+        }
+    }
+
+
+    return result;
+}
+
+function decToHex(dec){
+ 
+
+
+}
+
+// console.log(binToDec('11')); // -> 3
+// console.log(binToDec('100'));
+// console.log(binToDec('101'));
+// console.log(binToDec('0101'));
+
+
+console.log(decToBin('10'));
 module.exports = binToDec;
