@@ -13,8 +13,11 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
-function binToDec(binary) {
-
+function binToDec(binary, power = 0, num = parseInt(binary[binary.length - 1]), sum = num * Math.pow(2, power)) {
+    if (binary.length === 1) return sum;
+    return sum + binToDec(binary = binary.slice(0, binary.length - 1), power = power + 1)
 }
+
+console.log(binToDec('1101011011'))
 
 module.exports = binToDec;
