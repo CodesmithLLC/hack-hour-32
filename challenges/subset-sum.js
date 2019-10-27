@@ -21,7 +21,6 @@ function subsetSum(array, target) {
     for(let i = 0; i < array.length; i += 1) {
       let newArray = [...array];
       newArray.splice(i, 1)
-      console.log(newArray);
       flag = subsetSum(newArray, target)
       if (flag) {return true}
     }
