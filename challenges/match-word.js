@@ -25,23 +25,28 @@ if(str.length>=0){
     else if(str.length===0 || str.length===3 && str.charAt(0)===str.charAt(str.length-1)){
         return true;
     }
-   else if(str.charAt(0)==='_' || str.charAt(0)==='-' || str.charAt(0)==='(' || str.charAt(0)===')' || str.charAt(0)==='[' || str.charAt(0)===']'){
+   else if(str.charAt(0)==='_' || str.charAt(0)==='-' || str.charAt(0)==='(' || str.charAt(0)===')' || str.charAt(0)==='[' || str.charAt(0)===']' || str.charAt(0)==='$' || str.charAt(0)==='#'){
         return matchWord(str.slice(1));
     }
-    else if(str.charAt(str.length-1)==='_' || str.charAt(str.length-1)==='-' || str.charAt(str.length-1)==='(' || str.charAt(str.length-1)===')' || str.charAt(str.length-1)==='[' || str.charAt(str.length-1)===']'){
+    else if(str.charAt(str.length-1)==='_' || str.charAt(str.length-1)==='-' || str.charAt(str.length-1)==='(' || str.charAt(str.length-1)===')' || str.charAt(str.length-1)==='[' || str.charAt(str.length-1)===']' || str.charAt(str.length-1)==='$' || str.charAt(str.length-1)==='#'){
         return matchWord(str.slice(0,str.length-1));
     }
     else if(str.charAt(0)===str.charAt(str.length-1)){
         return matchWord(str.slice(1,str.length-1));
+    }
+    else if(str.charAt(0)!==str.charAt(str.length-1)){
+        return false;
     }
   
     
 }
 }
 
-// console.log(matchWord('__END_DNE-----'));
-// console.log(matchWord('IF()()fi[]') );
-console.log(matchWord('for__if__rof__fi'));
+// console.log(matchWord('__END_DNE-----')); //true
+// console.log(matchWord('IF()()fi[]') ); //true
+// console.log(matchWord('for__if__rof__fi'));
+matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  //true
+
 module.exports = matchWord;
 
 // console.log(matchWord('__ENDDNE__'));
