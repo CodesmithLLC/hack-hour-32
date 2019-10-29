@@ -42,9 +42,9 @@
 function balancedParens(input) {
 
 
-    if (input.length % 2 !== 0) return false;
+    if (input.length % 2 !== 0) return false; // input has uneven length => false
 
-    let stack = [];
+    let stack = []; // use a stack to keep track of pairs
     const pairs = {
         '(': ')',
         '{': '}',
@@ -54,15 +54,15 @@ function balancedParens(input) {
     for (let i = 0; i < input.length; i++) {
 
         if (input[i] === '(' || input[i] === '{' || input[i] === '[') {
-            stack.push(input[i]);
+            stack.push(input[i]); // push opening into stack
         }
         else {
             let last = stack.pop();
 
-            if (input[i] !== pairs[last]) { return false };
+            if (input[i] !== pairs[last]) return false;
         }
     }
-    if (stack.length !== 0) { return false };
+    if (stack.length !== 0) { return false }; // if stack has unmatched pair/ isn't empty
 
     return true;
 
@@ -70,7 +70,7 @@ function balancedParens(input) {
 
 
 
-console.log(balancedParens('[({})]'))
+console.log(balancedParens('[({)]'))
 
 
 module.exports = balancedParens;
