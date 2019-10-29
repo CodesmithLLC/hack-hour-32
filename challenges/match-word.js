@@ -11,7 +11,44 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
-}
-
-module.exports = matchWord;
+    str = str.toLowerCase();
+    let stack = [];
+    let tempWord = "";
+    for(let i = 0; i < str.length; i++){
+      if(str.charCodeAt(i) < 97 || str.charCodeAt(i) > 122){
+        if(tempWord != ""){
+          let top = stack[stack.length -1];
+          // console.log(reverseStr(top), tempWord);
+            if(reverseStr(top)!== tempWord){
+              stack.push(tempWord);
+              tempWord = "";
+            }
+            else{
+              stack.pop();
+              tempWord = "";
+            }
+        }
+      }
+      else{
+        tempWord += str[i];
+        if(i === str.length -1){
+          let top = stack[stack.length -1];
+          // console.log(reverseStr(top), tempWord);
+          if(reverseStr(top) === tempWord){
+            stack.pop();
+          }
+        }
+      }
+    }
+    return stack.length === 0;
+  }
+  
+  
+  function reverseStr(str){
+    if(!str) return "";
+    let arr = str.split("");
+    arr.reverse();
+    return arr.join("");
+  }
+  
+  module.exports = matchWord;
