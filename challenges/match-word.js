@@ -11,7 +11,60 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+  // remove all non alpha-numeric chars
+  str = str.replace(/[^a-z0-9+]+/gi, ' ');
+
+  // remove all leading & trailing spaces
+  str = str.trim();
+
+
+  const open = [];
+  let openPush = true;
+
+  const close = [];
+  let closePush = false;
+
+
+  for (let i = 0; i < str.length; i++) {
+	if (str[i] === ' ') {
+	  openPush = false;
+	}
+	
+	if (openPush) {
+	  open.push(str[i]);
+	}
+	   
+
+	if (!openPush && str[i].toLowerCase() === open[open.length-1].toLowerCase()) {
+	  closePush = true;
+	}
+
+	if (closePush) {
+	  close.push(str[i]);
+	}
+
+  }
+
+  const a = open.join('').toLowerCase();
+  const b = close.reverse().join('').toLowerCase();
+
+  console.log(a);
+  console.log(b);
+
+  if (a == b) {
+	return true;
+  } else {
+	return false;
+  }
 
 }
+
+//console.log( matchWord('__END_DNE-----') );
+//console.log( matchWord('__ENDDNE__') );
+//console.log( matchWord('IF()()fi[]') );
+//console.log( matchWord('for__if__rof__fi') );
+//console.log( matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw') );
+//console.log( matchWord('') );
+
 
 module.exports = matchWord;
