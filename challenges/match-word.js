@@ -11,7 +11,23 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+    const stack = [];
+    let spaceBetween = false;
+    for (let i = 0; i < str.length; i ++) {
+        if (str.charCodeAt(i) > 64 && str.charCodeAt(i) < 91 ||
+        str.charCodeAt(i) > 96 && str.charCodeAt(i) < 123) {
+            if (stack[stack.length - 1] !== str[i]) {
+                stack.push(str[i]);
+                spaceBetween = false;
+            }
+            if (stack[stack.length -1] === str[i] && spaceBetween === true) {
+                stack.pop();
+            } 
+        } else {
+            spaceBetween = true;
+        }
+    }
+    return stack.length > 0 ? false: true;
 }
 
 module.exports = matchWord;
