@@ -13,6 +13,7 @@
 function matchWord(str) {
     const stack = [];
     let spaceBetween = false;
+    str = str.toLowerCase();
     for (let i = 0; i < str.length; i ++) {
         if (str.charCodeAt(i) > 64 && str.charCodeAt(i) < 91 ||
         str.charCodeAt(i) > 96 && str.charCodeAt(i) < 123) {
