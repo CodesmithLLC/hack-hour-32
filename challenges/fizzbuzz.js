@@ -29,5 +29,6 @@ function fizzbuzz(num) {
     return returnArr;
 }
 
+console.log(fizzbuzz(3));
 
 module.exports = fizzbuzz;
