@@ -45,7 +45,7 @@ if(str.length>=0){
 // console.log(matchWord('__END_DNE-----')); //true
 // console.log(matchWord('IF()()fi[]') ); //true
 // console.log(matchWord('for__if__rof__fi'));
-matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  //true
+// matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  //true
 
 module.exports = matchWord;
 
