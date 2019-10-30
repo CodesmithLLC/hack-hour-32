@@ -10,6 +10,7 @@
 
 function subsetSum(array, target) {
   arr = array.filter((x) => (x <= target));
+  
   let combi = [];
   let temp= 0;
   let letLen = Math.pow(2, arr.length);
