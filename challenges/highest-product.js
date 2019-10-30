@@ -7,7 +7,7 @@ function highestProduct(array) {
     if (array.length < 3 || !Array.isArray(array)) return 0;
 
     if (array.length === 3) {
-        return array.reduce((p, n) => p * Math.abs(n), 1)
+        return array.reduce((p, n) => p * n, 1)
     }
 
     // sort array
