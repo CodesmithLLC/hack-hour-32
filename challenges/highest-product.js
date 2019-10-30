@@ -4,25 +4,32 @@
 
 function highestProduct(array) {
 
+    if (array.length < 3 || !Array.isArray(array)) return 0;
 
     if (array.length === 3) {
-        return array.reduce((p, n) => p * n)
+        return array.reduce((p, n) => p * Math.abs(n), 1)
     }
 
     // sort array
+
+    //let positives = array.map(ele => Math.abs(ele))
+    //console.log(sorted)
+    //console.log(`positives`, positives)
+
     const sorted = array.sort((a, b) => a - b)
-    console.log(sorted)
-
-    return sorted[array.length - 1] * sorted[array.length - 2] * sorted[array.length - 3]
-
+    console.log(`sorted: `, sorted)
+    // console.log(`last`, )
+    return sorted[sorted.length - 1]
+        * sorted[sorted.length - 2]
+        * sorted[sorted.length - 3]
 }
 
-
-// const n = [-50, 10, 3] // -1500
+console.log(highestProduct([1, 2]))
+// const n = [-50, 10, 3] // 1500
 // console.log(highestProduct(n))
 
-// const t = [-1, 2, 4, 9]
-// console.log(highestProduct(t)) // 72
+// const t = [-1, -2, 4, 9]
+// console.log(highestProduct(t)) // -36
 
 // const a = [0, 2, 1, 4, 8] // 2/4/8 = 64
 
