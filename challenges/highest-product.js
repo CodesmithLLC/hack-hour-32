@@ -3,6 +3,17 @@
  */
 
 function highestProduct(array) {
+  if (array.length === 0) {
+    return 0;
+  }
+  if (array.length <= 3) {
+    let temp1 = 1;
+    for (let i = 0; i < array.length; i += 1) {
+      temp1 *= array[i];
+    }
+    return temp1;
+  }
+
   const arrOfLargestNums = [];
 
   for (let i = 0; i < 3; i += 1) {
