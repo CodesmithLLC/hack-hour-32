@@ -16,6 +16,8 @@ function subsetSum(array, target) {
     subsetSum(array.slice(1), target)
   );
 
+  // Should try doing tail recursion then dynamic programming versions
+
   // const remainderMap = {};
   // const remainderArr = [];
   // const result = false;
