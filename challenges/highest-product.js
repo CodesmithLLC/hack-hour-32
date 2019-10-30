@@ -9,6 +9,4 @@ function highestProduct(array) {
   return Math.max(ar[ar.length-1] * ar[ar.length-2] * ar[ar.length-3], ar[ar.length-1] * ar[0] * ar[1]);
 }
 
-console.log(highestProduct(1))
-
 module.exports = highestProduct;
