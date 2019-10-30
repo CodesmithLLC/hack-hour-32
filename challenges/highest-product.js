@@ -6,6 +6,8 @@
 function highestProduct(array) {
   let sortedArr = array.sort(compareNumbers);
   let highestNum = sortedArr.splice(sortedArr.length - 3, 3);
+  if (array.length < 3) return 0;
+  if (!Array.isArray(array)) return 0;
   if (
     sortedArr[0] * sortedArr[1] > highestNum[0] * highestNum[1] ||
     sortedArr[0] * sortedArr[1] > highestNum[1] * highestNum[2]
