@@ -13,7 +13,7 @@ function Node(val) {
 function zip(l1, l2) {
 
 	if (!l1) { return l2 }
- 	if (!l2) { return l1 }
+  if (!l2) { return l1 }
 
   let zipped = new Node(l1.val);
   let current = zipped;
@@ -35,7 +35,21 @@ function zip(l1, l2) {
     l1currentList = l1currentList ? false : true;
   }
 
+  displayZipped(zipped);
   return zipped;
+}
+
+function displayZipped(zipped) {
+  console.log(zipped);
+  let current = zipped;
+  console.log(current);
+  let i = 0;
+
+  while (current) {
+    console.log(`Node ${i++}`);
+    console.log(`--------> ${current.value} ---`);
+    current = current.next;
+  }
 }
 
 module.exports = {Node: Node, zip: zip};
