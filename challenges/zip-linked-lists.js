@@ -21,6 +21,10 @@ function zip(l1, l2) {
   let l1marker = l1.next;
   let l2marker = l2;
 
+  console.log(`l1 INPUT: `)
+  console.log(l1);
+  console.log(' || ')
+
   while (current) {
     if (l1currentList && l2marker !== null) {
       current.next = new Node(l2marker.val);
@@ -34,7 +38,9 @@ function zip(l1, l2) {
     current = current.next;
     l1currentList = l1currentList ? false : true;
   }
-
+  console.log(`zipped value returned: `);
+  console.log(zipped);
+  console.log(' || ')
   displayZipped(zipped);
   return zipped;
 }
