@@ -51,6 +51,7 @@ let current2=l2; //deep copy
 
       // }
 
+
   }
 // while(current1.next!==null){
 //   result.next=new Node(current1.value);
@@ -61,6 +62,12 @@ let current2=l2; //deep copy
 //   current2=current2.next;
 // }
 
+if(current2!==null){
+  let temp=current1.next;
+current1.next=current2;
+current2=current2.next;
+current1=temp;
+}
   return l1;
 
 };
@@ -69,9 +76,12 @@ module.exports = {Node: Node, zip: zip};
 let l1=new Node(5);
 l1.next=new Node(4);
 l1.next.next=new Node(3);
+console.log(l1);
 
 let l2=new Node(8);
 l2.next=new Node(7);
 l2.next.next=new Node(6);
+console.log(l2);
 
+console.log("zip");
 console.log(zip(l1,l2));
