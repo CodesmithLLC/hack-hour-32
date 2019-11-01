@@ -39,16 +39,25 @@ function highestProduct(array) {
         let current=array[i];
         //if the element is greater than any of the current indexed elements, the product will be greater
       
+        if(current===0){continue;}//we do not want to risk dividing by zero
 
         //replace with the min if it is greater, otherwise leave unchanged
         if(current>array[minIndex]){
             console.log("about to replace i ="+i);
             let positionIndex=indexes.indexOf(minIndex); //0, 1 or 2, the array that holds the master indices of the 3 elements 
-            result/=array[minIndex];//divide out and replace
-            result*=array[i];
+            if(array[minIndex]!==0){
+                result/=array[minIndex];//divide out and replace
+                result*=array[i];
+            }
+           
 
             indexes[positionIndex]=i;//unreferences old and reassigns it
 
+            if(array[minIndex]===0){
+                result=1;
+                result=array[indexes[0]]*array[indexes[1]]*array[indexes[2]];
+            }
+            
             console.log("indexes"+indexes);//indexes of the main legit indexes of array that contain the master factors
 
             //now we must check everythign again or the min index and reassign thtrough if statemnets
@@ -79,4 +88,4 @@ module.exports = highestProduct;
 
 
 
-console.log(highestProduct([1,2,3,4,5,1]));
+console.log(highestProduct([2,1,1,4,5,1]));
