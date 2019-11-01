@@ -15,7 +15,7 @@ function zip(l1, l2) {
 	if (!l1) { return l2 }
   if (!l2) { return l1 }
 
-  let zipped = new Node(l1.val);
+  let zipped = new Node(l1.value);
   let current = zipped;
   let l1currentList = true;
   let l1marker = l1.next;
@@ -27,11 +27,11 @@ function zip(l1, l2) {
 
   while (current) {
     if (l1currentList && l2marker !== null) {
-      current.next = new Node(l2marker.val);
+      current.next = new Node(l2marker.value);
       l2marker = l2marker.next;
     } else {
       if (l1marker !== null) {
-      current.next = new Node(l1marker.val);
+      current.next = new Node(l1marker.value);
       l1marker = l1marker.next;
       }
     }
