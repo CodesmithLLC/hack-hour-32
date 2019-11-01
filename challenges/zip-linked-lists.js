@@ -18,42 +18,25 @@ function zip(l1, l2) {
   let zipped = new Node(l1.val);
   let current = zipped;
   let l1currentList = true;
-  let l1marker = l1;
+  let l1marker = l1.next;
   let l2marker = l2;
 
-  console.log('init');
-  console.log('zipped:');
-  console.log(zipped);
-  let i = 1;
-
   while (current) {
-    console.log(`ROUND ${i++} ---------------`)
-    if (l1currentList) {
-      console.log('current: l1');
-      if (l1marker === null) {
-        console.log('l1marker: null, returning zipped');
-        return zipped;
-      }
-      console.log('appending current with l2');
+    if (l1currentList && l2marker !== null) {
       current.next = new Node(l2marker.val);
       l2marker = l2marker.next;
-      console.log('zipped')
-      console.log(zipped);
     } else {
-      console.log('current: l2');
-      if (l2marker === null) {
-        console.log('l2marker: null, returning zipped');
-        return zipped;
-      }
-      console.log('appending current with l1');
-      console.log(l1marker);
+      if (l1marker !== null) {
       current.next = new Node(l1marker.val);
       l1marker = l1marker.next;
-      console.log('zipped')
-      console.log(zipped);
+      }
     }
+    current = current.next;
     l1currentList = l1currentList ? false : true;
   }
+
+  displayZipped(zipped);
+  return zipped;
 }
 
 module.exports = {Node: Node, zip: zip};
