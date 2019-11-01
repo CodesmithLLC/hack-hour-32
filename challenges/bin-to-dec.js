@@ -13,12 +13,15 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
+
+
 // function binToDec(binary, i=0, count=0) {
 function binToDec(binary, count=0) {
     // if (i === binary.length) return count;
     if (!binary.length) return count;
 
     // return binary[i] * Math.pow(2,binary.length-1) + binToDec(binary, i+=1, )
+    
     return count = binary[0] * Math.pow(2,binary.length-1) + binToDec(binary.substring(1))
 }
 console.log(binToDec('0'))
