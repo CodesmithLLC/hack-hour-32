@@ -9,25 +9,43 @@ function Node(val) {
   this.value = val;
   this.next = null;
 }
-// function LinkedList(){
-//   this.head = null;
-//   this.tail = null;
-// }
-
 function zip(l1, l2) {
-  // const l1 = new Node(val)
-  // const l2 = new Node(val)
-  let current = l1.next;
-  current = head;
-  if (current === null){
-    current = l2;
-    l2 = tail;
-  }else if (current){
-    current = current.next;
-    let newL1 = l1;
-    current = newL1;
-    newL1 = tail;
+  if (!l1 && !l2) return undefined;
+  if (!l1) return l2;
+  if (!l2) return l1;
+  const head = l1;
+  let newl1 = l1.next
+  let newl2 = l2.next
+  // let ll1 = l1;
+  // let ll2 = l2;
+  while (newl1 && newl2) {
+    l1.next = l2;
+    l1 = newl1
+    l2.next = newl1;
+    l2 = newl2;
+    // if(newl1 !== null) newl1 = newl1.next;
+    // if(newl2 !== null) newl2 = newl2.next;
+    newl1 = newl1.next;
+    newl2 = newl2.next;
   }
-};
+  // if (newl2 === l1){
+  //   return ll2;
+  // }else{
+  //   return ll1;
+  // }
+  // console.log(l1.value);
+  return head;
+}
+let a = new Node(1);
+a.next = new Node(3);
+
+let b = new Node(2);
+b.next = new Node(4);
+b.next.next = new Node(6);
+
+let c = zip(a,b);
+for(let i = c;i !== null; i = i.next){
+  console.log(i.value);
+}
 
 module.exports = {Node: Node, zip: zip};
