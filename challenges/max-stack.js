@@ -10,29 +10,28 @@ function Stack() {
   const obj = {};
   let length = 0;
   let largestNum = 0;
+}
   //push
-  const push = (value) => {
+  Stack.prototype.push = (value) => {
     obj[length] = value;
     length += 1;
     return obj.length;
   }
   //pop
-  const pop = () =>{
+  Stack.prototype.pop = () =>{
     if (length === 0) return undefined;
     let lastElement = obj[length-1];
     delete obj[length-1];
     return lastElement;
   }
   //getMax
-  const getMax = () =>{
-    let maxNum = 0;
+  Stack.prototype.getMax = () =>{
     for (let i=0; i<length; i++){
-      if (obj[i]> maxNum){
-        maxNum = obj[i];
+      if (obj[i]> largestNum){
+        largestNum = obj[i];
       }
     }
-    return maxNum;
+    return largestNum;
   }
-}
 
 module.exports = Stack;
