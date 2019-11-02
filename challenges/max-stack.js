@@ -8,25 +8,25 @@
 
 function Stack() {
   const obj = {};
-  let length = 0;
-  let largestNum = 0;
+  this.length = 0;
+  this.largestNum = 0;
 }
   //push
   Stack.prototype.push = (value) => {
-    obj[length] = value;
-    length += 1;
-    return obj.length;
+    obj[this.length] = value;
+    this.length += 1;
+    return obj[this.length];
   }
   //pop
   Stack.prototype.pop = () =>{
-    if (length === 0) return undefined;
-    let lastElement = obj[length-1];
-    delete obj[length-1];
+    if (this.length === 0) return undefined;
+    let lastElement = obj[this.length-1];
+    delete obj[this.length-1];
     return lastElement;
   }
   //getMax
   Stack.prototype.getMax = () =>{
-    for (let i=0; i<length; i++){
+    for (let i=0; i<this.length; i++){
       if (obj[i]> largestNum){
         largestNum = obj[i];
       }
