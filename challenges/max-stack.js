@@ -8,6 +8,28 @@
 
 function Stack() {
   // body...
+  this.contents = {};
+  this.max;
 }
+
+Stack.prototype.push = function (value) {
+  const length = (Object.keys(this.contents).length);
+  this.contents[length] = value;
+  this.max = this.max > value ? this.max : value;
+  return length + 1;
+};
+
+Stack.prototype.pop = function () {
+  const length = (Object.keys(this.contents).length) - 1;
+  const returnValue = this.contents[length];
+  delete this.contents[length];
+  return length;
+}
+
+Stack.prototype.getMax = function() {
+  return this.max;
+}
+
+const newStack = new Stack();
 
 module.exports = Stack;
