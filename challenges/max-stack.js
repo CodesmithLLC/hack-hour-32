@@ -39,7 +39,7 @@ Stack.prototype.getMax(){
 
 
     let values=Object.values(this.storage);
-
+    values.sort();
     return values[values.length-1];
     return maxValue;
 }
