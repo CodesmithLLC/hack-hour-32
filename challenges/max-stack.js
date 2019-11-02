@@ -26,6 +26,9 @@ Stack.prototype.pop = function() {
 };
 
 Stack.prototype.getMax = function() {
+  if (stack.length === 0) {
+    return undefined;
+  }
   return Math.max.apply(Math, Object.values(this.storage));
 };
 
