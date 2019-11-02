@@ -12,6 +12,7 @@ function Stack() {
   this.top = null;
   this.length = 0;
   this.max = -Infinity;
+  this.values = {};
 }
 
 function Node(data) {
@@ -22,7 +23,10 @@ function Node(data) {
 Stack.prototype.push = function(data) {
   // create the node that will be pushed onto the call stack
   let node = new Node(data);
-  if (typeof data === 'number' && data > this.max) this.max = data;
+  if (typeof data === 'number' && data > this.max) {
+    this.max = data;
+    // this.values.data = data;
+  }
   //  assign current node's node.previous pointer to this.top, which will all previously made nodes (line 30)
   // the previously made node is the prior pushed stack of the call stack, with all prior node's held in its this.previous
   node.previous = this.top;
@@ -31,10 +35,13 @@ Stack.prototype.push = function(data) {
   this.length++;
   return this.length;
 }
-
 Stack.prototype.pop = function(data) {
   // save the stack last pushed in as a temp variable since we need to return it
   const botStackFrame = this.top;
+  
+  // const values = Object.keys(this.values);
+  // console.log(values);
+  
   // re-assign the this.top pointer to the removed node's this.previous, which holds all prior stacks
   this.top = botStackFrame.previous;
   this.length--;
@@ -45,17 +52,18 @@ Stack.prototype.getMax = function(data) {
   return this.max;
 }
 
-// const newStack = new Stack;
-// newStack.push(1);
-// newStack.push(2);
-// newStack.push(100);
-// newStack.push(3);
-// newStack.push(4);
-// console.log(newStack);
-// newStack.pop();
-// console.log(newStack);
-// console.log(newStack.getMax());
+const newStack = new Stack;
+newStack.push(1);
+newStack.push(2);
+newStack.push(3);
+newStack.push(4);
+newStack.push(100);
+console.log(newStack);
+newStack.pop();
+console.log(newStack);
+console.log(newStack.getMax());
 
+console.log(newStack.values);
 
 
 module.exports = Stack;
