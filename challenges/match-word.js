@@ -10,35 +10,55 @@
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
 // matchWord('');  -> true
 
-function matchWord(str) {
-    //split the str
-    let splitStr = str.split('');
-    
-    //empty string for storage
-    let empty = [];
-    // console.log(str.match(/[a-z]/i))
-    // console.log(typeof str.match(/[a-z]/i))
-    //iterate through and check if it is a letter
-    for (let i = 0; i < splitStr.length; i++) {
-        if (splitStr[i] === str.match(/[a-z]/i)) { ///
-            empty.push(splitStr[i])
-        }
-    }
-
-    //iterate through empty
-    for (let i = 0; i < empty.length; i++) {
-        //pop and shift those letters
-        if (empty[i] === empty[empty.length-1-i]) {
-            empty.pop()
-            empty.shift()
-        }
-    }
-    
-    //check the length of empty- if it is 0, return true, if not, return false
-    if (empty.length === 0) {
+const matchWord1 = str => {
+    const words = str.match(/[A-Za-z]+/gi);
+    if (!words) {
         return true;
-    } return false;
+    }
+​
+    const stack = [];
+    words.forEach(word => {
+        const reversedWord = word.split('').reverse().join('');
+        if (reversedWord.toLowerCase() === stack[stack.length - 1]) {
+            stack.pop();
+        } else {
+            stack.push(word.toLowerCase());
+        }
+    });
+    
+    return stack.length === 0;
 }
+
+// function matchWord(str) {
+//     //split the str
+//     let splitStr = str.split('');
+    
+//     //empty string for storage
+//     let empty = [];
+//     // console.log(str.match(/[a-z]/i))
+//     // console.log(typeof str.match(/[a-z]/i))
+//     //iterate through and check if it is a letter
+//     for (let i = 0; i < splitStr.length; i++) {
+//         if (splitStr[i] === str.match(/[a-z]/i)) { ///
+//             empty.push(splitStr[i])
+//         }
+//     }
+
+//     //iterate through empty
+//     for (let i = 0; i < empty.length; i++) {
+//         //pop and shift those letters
+//         if (empty[i] === empty[empty.length-1-i]) {
+//             empty.pop()
+//             empty.shift()
+//         }
+//     }
+    
+//     //check the length of empty- if it is 0, return true, if not, return false
+//     if (empty.length === 0) {
+//         return true;
+//     } return false;
+// }
+
 
 console.log(matchWord('__END_DNE-----')); //true
 console.log(matchWord('__ENDDNE__')); //false
