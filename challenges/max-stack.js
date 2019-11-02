@@ -9,28 +9,32 @@
 function Stack() {
   // body...
   this.obj = {};
-  this.index = 0;
+  this.length = 0;
 
-  this.prototype.push = function (value) {
-    this.object.index ++;
-    this.object.index = value;
-    return this.object.length;
+  Stack.prototype.push = function (value) {
+    // this.max = this.obj[this.length]
+    this.object[this.length] = value;
+    this.length+=1;
+    return this.length;
   }
 
-  this.prototype.pop = function (value) {
+  Stack.prototype.pop = function (value) {
     //create a storage variable
     let storage = value;
     //delete that value
-    delete Math.max(this.obj.index)
+    delete this.obj[this.length-1]
     //return storage
     return storage;
   }
 
-  this.prototype.getMax = function () {
-    //reference the last key 
-    let last = Object.keys(this.obj)[Object.keys(this.obj).length-1];
-    //return the last index
-    return last;
+  Stack.prototype.getMax = function () {
+    let max = 0;
+    for (let i = 0; i < this.length; i++) {
+      if (this.obj[i] > this.obj[max]) {
+        max = this.obj[i];
+      }
+    }
+    return max;
   }
 }
 
