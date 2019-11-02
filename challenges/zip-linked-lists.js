@@ -11,31 +11,26 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-  let first = new Node(),
-    sec = new Node();
-  let i = 0;
 
+  let i = l1.head, j = l2.head;
 
-  const merged = [];
+  while (l1 && l2) {
 
-  while (first && sec) {
-    merged.push(first)
-    merged.push(sec);
-    i++;
-
-    first.value = l1[i];
-    sec.value = l2[i];
-
-    first.next = sec;
-    sec.next = first;
-    // console.log(`i `, first)
-    // console.log(`j `, sec)
+    let temp1 = i.next;
+    
+    
   }
-  return merged;
+  
 };
 
-// const a = [1, 3, 5, 7];
-// const b = [2, 4, 6, 8];
-// console.log(zip(a, b))
+const a = new Node(1);
+a.next = new Node(3);
+a.next.next = new Node(5);
+
+const b = new Node(2);
+b.next = new Node(4);
+b.next.next = new Node(6);
+
+console.log(zip(a, b))
 
 module.exports = { Node: Node, zip: zip };
