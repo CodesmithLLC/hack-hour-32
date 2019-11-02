@@ -28,7 +28,7 @@ Stack.prototype.pop = function() {
 };
 
 Stack.prototype.getMax(){
-    let keys=this.storage.keys();
+    let keys=Object.keys(this.storage);
     if(keys===undefined || keys.length===0){ return;}
     let maxValue=this.storage[keys[0]];
     for(let i=0;i<keys.length;i++){
@@ -36,6 +36,11 @@ Stack.prototype.getMax(){
             maxValue=this.storage[keys[i]];
           }
     } //I think the get it in O(1) we make the values the keys, and if the keys are theoretically auto sorted, we take the last one
+
+
+    let values=Object.values(this.storage);
+
+    return values[values.length-1];
     return maxValue;
 }
 
