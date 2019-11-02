@@ -9,6 +9,7 @@ function Node(val) {
   this.value = val;
   this.next = null;
 }
+<<<<<<< HEAD
 function zip(l1, l2) {
   if (!l1 && !l2) return undefined;
   if (!l1) return l2;
@@ -49,3 +50,10 @@ for(let i = c;i !== null; i = i.next){
 }
 
 module.exports = {Node: Node, zip: zip};
+=======
+
+function zip(l1, l2) {
+};
+
+module.exports = {Node: Node, zip: zip};
+>>>>>>> fbfa727fdbcdb43593ee58d05e8309d7a1ae5fac
