@@ -8,6 +8,28 @@
 
 function Stack() {
   // body...
+  this.stack = {}
+  this.max = -Infinity;
+  this.index = 0;
+
 }
 
+Stack.prototype.pop = function(){
+  let remove = this.stack[this.index];
+  delete this.stack[this.index];
+  this.index -= 1;
+  return remove;
+}
+Stack.prototype.push = function(element){
+  this.stack[this.index] = element;
+  this.index += 1;
+  if(element > this.max){
+    this.max = element;
+  }
+  return this.index;
+
+}
+Stack.prototype.getMax = function(){
+  return this.max
+}
 module.exports = Stack;
