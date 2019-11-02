@@ -19,7 +19,7 @@ Stack.prototype.push = function(val){
   this.length ++;
   if(this.max < val)
     this.max = val;
-  return;
+  return this.length;
 }
 
 Stack.prototype.pop = function(){
