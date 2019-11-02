@@ -14,6 +14,7 @@ function Stack() {
 }
 
 Stack.prototype.push = function(val){
+  if(val === undefined) return;
   this.arr[this.length] = val;
   this.length ++;
   if(this.max < val)
@@ -36,10 +37,19 @@ Stack.prototype.pop = function(){
 }
 
 Stack.prototype.getMax = function(){
-  return this.max;
+  return this.length === 0 ? undefined : this.max;
 }
 
-// let a = new Stack();
+let a = new Stack();
+console.log(a.getMax());
+a.push();
+a.push(110);
+a.push(110);
+console.log(a.getMax());
+a.pop();
+console.log(a.getMax());
+a.pop();
+console.log(a.getMax());
 // // a.push(110);
 // // a.push(10);
 // // a.push(7);
