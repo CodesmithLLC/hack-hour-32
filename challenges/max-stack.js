@@ -18,7 +18,7 @@ Stack.prototype.push = function(val) {
   this.length ++;
   for (let i = 0; i <= this.max.length; i ++) {
     if (this.max[i] > val) {
-      splice(i, 0, val);
+      this.max.splice(i, 0, val);
       return this.length;
     }
     if (i === this.max.length) {
@@ -32,8 +32,12 @@ Stack.prototype.pop = function() {
   const popped = this.storage[this.length - 1]
   delete this.storage[this.length - 1];
   this.length --;
-  this.max.pop();
-  return popped;
+  for (let i = 0; i < this.max.length; i ++) {
+    if (this.max[i] === popped) {
+      this.max.splice(i, 1)
+      return popped;
+    }
+  }
 }
 
 //getmax
