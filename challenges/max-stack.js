@@ -16,7 +16,7 @@ function Stack() {
 Stack.prototype.push = function (...values) {
   values.forEach(value => {
     this.contents[this.length] = value;
-    this.max = this.max > value ? this.max : value;
+    this.max = this.max > this.contents ? this.max : value;
     this.length = this.length + 1;
   });
   return this.length;
@@ -26,6 +26,12 @@ Stack.prototype.pop = function () {
   this.length = this.length - 1;
   const returnValue = this.contents[this.length];
   delete this.contents[this.length];
+  if (returnValue === this.max) {
+  	this.max = -Infinity;
+  	for (let key in this.contents) {
+  		this.max = this.max > this.contents[key] ? this.max : this.contents[key];
+  	}
+  }
   return returnValue;
 }
 
