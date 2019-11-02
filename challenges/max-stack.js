@@ -29,20 +29,4 @@ Stack.prototype.getMax = function() {
   return Math.max.apply(Math, Object.values(this.storage));
 };
 
-//TEST
-let stack = new Stack();
-console.log(stack.push(4));
-console.log(stack.push(6));
-console.log(stack.push(9));
-console.log(stack.push(12));
-console.log(stack.push(567));
-console.log(stack.push(5410));
-console.log(stack.pop(5410));
-
-console.log(stack);
-
-console.log(stack.getMax());
-
-console.log(stack);
-
 module.exports = Stack;
