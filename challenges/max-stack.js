@@ -6,6 +6,7 @@
  * BONUS: The getMax method should retrieve the maximum value from the stack in O(1) time.
  */
 
+<<<<<<< HEAD
 
 function Stack() {
   this.storage = {}; //the contents in the storate is an object O(1) access
@@ -45,4 +46,10 @@ Stack.prototype.getMax(){
 }
 
 
+=======
+function Stack() {
+  // body...
+}
+
+>>>>>>> 2e0188e6552ab38266d8b797c6fdd39fe536ad6b
 module.exports = Stack;
