@@ -17,7 +17,16 @@ function reverseLinkedList(head) {
     let lead = head;
     let trailing1 = head;
     let trailing2 = head;
+    if (lead.next === null) {
+        return;
+    }
     lead = lead.next;
+    if (lead.next === null) {
+        lead.next = trailing1;
+        trailing1.next = null;
+        head = lead;
+        return;
+    }
     trailing1 = lead
     lead = lead.next;
     trailing2.next = null
@@ -30,15 +39,18 @@ function reverseLinkedList(head) {
         lead = lead.next;
     }
     trailing1.next = trailing2;
-    if (lead.next.next === null) {
-        trailing2 = lead;
-        lead = lead.next;
-        trailing2.next = trailing1;
-        lead.next = trailing2;
+    trailing2 = lead;
+    lead = lead.next;
+    trailing2.next = trailing1;
+    if (lead === null) {
+        head = trailing2;
         return;
     }
-    lead.next = trailing1;
-    return;
+        lead.next = trailing2;
+        head = lead;
+        return;
 }
+
+
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
