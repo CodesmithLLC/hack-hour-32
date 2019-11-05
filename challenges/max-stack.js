@@ -22,11 +22,13 @@ Stack.prototype.push = function (value) {
 // pop
 Stack.prototype.pop = function () {
   // return removed element 
-  let i = this.size, temp = this.store[i - 1];
-
-  delete this.store[i - 1];
-  i -= 1;
-  return temp;
+  if (this.size === 0) return undefined;
+  else {
+    let i = this.size, temp = this.store[i - 1];
+    delete this.store[i - 1];
+    i -= 1;
+    return temp;
+  }
 
 }
 
@@ -51,5 +53,13 @@ Stack.prototype.getMax = function () {
     return max;
   }
 }
+
+
+//const s1 = new Stack();
+// console.log(s1.push(1))
+// console.log(s1.push(2));
+// console.log(s1.push(5))
+
+// console.log(s1.pop())
 
 module.exports = Stack;
