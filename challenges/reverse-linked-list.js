@@ -17,7 +17,7 @@ function reverseLinkedList(head) {
     if(head.next == null ){
       return head;
     }
-    if(head == null){
+    if(head == undefined){
         return undefined;
     }
     let tmp = reverseLinkedList(head.next);
