@@ -24,11 +24,13 @@ Stack.prototype.pop = function() {
 }
 
 Stack.prototype.getMax = function() {
+  if (this.index === 0) return undefined;
+  
   this.max = -Infinity;
   for (const key in this.store) {
     if (this.store[key] > this.max) this.max = this.store[key];
   }
   return this.max;
-}
+} 
 
 module.exports = Stack;
