@@ -6,6 +6,7 @@
  * BONUS: The getMax method should retrieve the maximum value from the stack in O(1) time.
  */
 
+<<<<<<< HEAD
 
 function Stack() {
   this.storage = {}; //the contents in the storate is an object O(1) access
@@ -28,7 +29,7 @@ Stack.prototype.pop = function() {
 };
 
 Stack.prototype.getMax(){
-    let keys=this.storage.keys();
+    let keys=Object.keys(this.storage);
     if(keys===undefined || keys.length===0){ return;}
     let maxValue=this.storage[keys[0]];
     for(let i=0;i<keys.length;i++){
@@ -36,8 +37,19 @@ Stack.prototype.getMax(){
             maxValue=this.storage[keys[i]];
           }
     } //I think the get it in O(1) we make the values the keys, and if the keys are theoretically auto sorted, we take the last one
+
+
+    let values=Object.values(this.storage);
+    values.sort();
+    return values[values.length-1];
     return maxValue;
 }
 
 
+=======
+function Stack() {
+  // body...
+}
+
+>>>>>>> 2e0188e6552ab38266d8b797c6fdd39fe536ad6b
 module.exports = Stack;
