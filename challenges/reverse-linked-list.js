@@ -19,7 +19,7 @@ function reverseLinkedList(head) {
     }
     let tmp = reverseLinkedList(head.next);
     head.next.next = head;
-    head.next = undefined;
+    head.next = null;
     return tmp;
 }
 
