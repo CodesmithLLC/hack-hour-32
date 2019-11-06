@@ -15,7 +15,8 @@
 function bestProfit(stock_prices_yesterday) {
   let minStockPrice = Infinity;
   let maxStockPrice = 0;
-  if(Array.isArray(stock_prices_yesterday)) return 0;
+  
+  if(!Array.isArray(stock_prices_yesterday)) return 0;
   if(stock_prices_yesterday.length === 0) return 0;
   for(let i = 0; i < stock_prices_yesterday.length; i += 1) {
     minStockPrice = Math.min(minStockPrice, stock_prices_yesterday[i]);
