@@ -13,7 +13,17 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+    if (!Array.isArray(stock_prices_yesterday)) {
+        return 0
+    }
+    const minMax = stock_prices_yesterday.reduce((acc, el) => {
+            acc[0] = (el < acc[0] ) ? el : acc[0]
+            acc[1] = (el > acc[1] ) ? el : acc[1]
+            return acc;
+    },[stock_prices_yesterday[0],stock_prices_yesterday[0]])
 
+    if (minMax[0] >= minMax[1]) return 0;
+    return minMax[1] - minMax[0]
 }
 
 module.exports = bestProfit;
