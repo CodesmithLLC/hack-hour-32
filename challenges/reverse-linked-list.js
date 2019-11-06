@@ -21,7 +21,6 @@ let oldHead = head;
 let tracker = head;
 let length = 0;
 if (!head) return undefined;
-
     while(tracker === null){
         if (tracker){
             length+=1;
