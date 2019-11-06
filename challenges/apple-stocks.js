@@ -13,6 +13,10 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+  if (!Array.isArray(stock_prices_yesterday || stock_prices_yesterday.length === 1) {
+    return 0;
+  }
+
   let minPrice = stock_prices_yesterday[0];
   let maxProfit = stock_prices_yesterday[1] - stock_prices_yesterday[0];
 
@@ -21,6 +25,9 @@ function bestProfit(stock_prices_yesterday) {
     let potentialProfit = currentPrice - minPrice;
     maxProfit = Math.max(maxProfit, potentialProfit)
     minPrice = Math.min(minPrice, currentPrice)
+  }
+  if (maxProfit < 0) {
+    return 0;
   }
   return maxProfit;
 }
