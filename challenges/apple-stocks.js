@@ -13,7 +13,23 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+    if (stock_prices_yesterday.length > 2 || Array.isArray(stock_prices_yesterday === false)) return 0;
 
+    const ranges = [];
+
+    // loop through array and calculate range for each possible combination
+    for (let i = 0; i < stock_prices_yesterday.length; i++) {
+        for (let j = 1; j < stock_prices_yesterday.length; j++) {
+            if (stock_prices_yesterday[i] < stock_prices_yesterday[j]) ranges.push(stock_prices_yesterday[j] - stock_prices_yesterday[i]);
+        }
+    }
+
+    if (ranges.length === 0) return 0;
+
+    // return largest range
+    return ranges.reduce((a, b) => {
+        return Math.max(a, b);
+    })
 }
 
 module.exports = bestProfit;
