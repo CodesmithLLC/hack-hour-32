@@ -13,7 +13,7 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-  if (!Array.isArray(stock_prices_yesterday || stock_prices_yesterday.length === 1) {
+  if (!Array.isArray(stock_prices_yesterday) || stock_prices_yesterday.length === 1) {
     return 0;
   }
 
