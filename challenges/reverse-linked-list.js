@@ -12,13 +12,13 @@ function Node(value) {
     this.value = value;
     this.next = null;
 }
-const a = new Node(1);
-const b = new Node(2);
-const c = new Node(3);
-const d = new Node(4);
-a.next = b;
-b.next = c;
-c.next = d;
+// const a = new Node(1);
+// const b = new Node(2);
+// const c = new Node(3);
+// const d = new Node(4);
+// a.next = b;
+// b.next = c;
+// c.next = d;
 
 function reverseLinkedList(head) {
     // if no head/or 1 node only
@@ -33,7 +33,7 @@ function reverseLinkedList(head) {
         previousNode = node;
         node = tempNext;
     }
-    console.log(`NEW HEAD AND LIST :`, previousNode.value, previousNode.next.value);
+    //console.log(`NEW HEAD AND LIST :`, previousNode.value, previousNode.next.value);
     return previousNode;
 }
 
@@ -41,6 +41,6 @@ function reverseLinkedList(head) {
 
 
 
-console.log(`reversed - `, reverseLinkedList(a)); // 4,3,2,1
+//console.log(`reversed - `, reverseLinkedList(a)); // 4,3,2,1
 
 module.exports = { Node: Node, reverseLinkedList: reverseLinkedList };
