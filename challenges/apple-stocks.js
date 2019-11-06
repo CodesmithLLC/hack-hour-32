@@ -8,7 +8,6 @@
  *
  *  Write an efficient algorithm for computing the best profit I could have made from 1 purchase
  *  and 1 sale of 1 Apple stock yesterday
- *
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
