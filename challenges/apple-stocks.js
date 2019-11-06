@@ -33,8 +33,8 @@ function bestProfit(stock_prices_yesterday) {
 
 }
 
-const a = [20, 100, 200, 400, 50, 30];
-//const a = [100, 200]
-console.log(bestProfit(a))
+// const a = [20, 100, 200, 400, 50, 30];
+// //const a = [100, 200]
+// console.log(bestProfit(a))
 
 module.exports = bestProfit;
