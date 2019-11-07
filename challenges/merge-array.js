@@ -25,9 +25,7 @@ function mergeArrays(arr1, arr2) {
     for(let j=0; j<keys.length; j++){
         result.push(Number(keys[j]))
     }
-    // console.log(result)
-    // console.log(obj)
-    // console.log(keys)
+    return result;
 }
 // function merArrays(arr1, arr2){
 //     const newArr = arr1.concat(arr2);
