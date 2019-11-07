@@ -27,12 +27,13 @@ function mergeArrays(arr1, arr2) {
             j++;
         }
     }
-    if (arr2[i] === undefined) {
+    if (arr2[j] === undefined) {
      result = result.concat(arr1.slice(i))
     } else {
        result = result.concat(arr2.slice(j))
     }
     return result;
 }
+
 
 module.exports = mergeArrays;
