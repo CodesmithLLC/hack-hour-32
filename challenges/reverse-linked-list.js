@@ -13,8 +13,13 @@ function Node(value) {
     this.next = null;
 }
 
+let a = new Node(1)
+
+
+console.log(a)
+
 function reverseLinkedList(head) {
 
-}
+} 
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};

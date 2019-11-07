@@ -1,3 +1,4 @@
+
 /**
  * We have our lists of orders sorted numerically already, in arrays.
  * Write a functin to merge our arrays of orders into one sorted array.
@@ -13,8 +14,17 @@
  *
  */
 
+var my_array = [3,4,6,10,11,15,21];
+var another_array = [1,5,8,12,14,19];
+
 function mergeArrays(arr1, arr2) {
 
+const outputArray = arr1.concat(arr2);
+return outputArray.sort(function(a, b) {
+    return a - b;
+  });
 }
+
+console.log(mergeArrays(my_array,another_array))
 
 module.exports = mergeArrays;

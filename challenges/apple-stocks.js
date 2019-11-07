@@ -12,8 +12,16 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
+const stockArray = [200,201,199,204,200,203,201]
 
+function bestProfit(stock_prices_yesterday) {
+  //find the index of the max value, 
+  //ignore everything after that
+  //set up a min value and start looping through the array while you reach the best profit index
+  //on the way if you find smaller index, just return it
 }
+
+console.log(bestProfit(stockArray))
+
 
 module.exports = bestProfit;
