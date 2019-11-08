@@ -14,8 +14,11 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
-    if(head.next == null || head == null){
+    if(head.next == null ){
       return head;
+    }
+    if(head == undefined){
+        return undefined;
     }
     let tmp = reverseLinkedList(head.next);
     head.next.next = head;
