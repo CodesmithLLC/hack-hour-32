@@ -7,13 +7,55 @@
  * numToWords(43) -> 'FortyThree'
  * numToWords(2999) -> 'TwoThousandNineHundredNintyNine'
  * numToWords(15) -> 'Fifteen'
- * numToWords(2483579411) -> 'TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven'
- * numToWords(300525151340440) -> 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
- * numToWords(92120000000000000) -> 'NintyTwoQuadrillionOneHundredTwentyTrillion'
+ * numToWords(2483579411) -> 
+ * 'TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven'
+ * 'TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven'
+ * numToWords(300525151340440) -> * 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
+ 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
+
+ * numToWords(92120000000000000) -> 
+ 'NintyTwoQuadrillionOneHundredTwentyTrillion'
+ 'NintyTwoQuadrillionOneHundredTwentyTrillion'
  */
 
 function numToWords(num) {
-
+  if(num < 1) return "Zero";
+  let returnStr = "";
+  let thousCount = 0;
+  let ones = ['One','Two', 'Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+  let tens = ['Twenty','Thrity','Forty','Fifty','Sixty','Seventy','Eighty',"Ninty"];
+  let thousand = ["",'Thousand','Million','Billion','Trillion', 'Quadrillion','Quintillion'] ;
+  while(num > 0){
+    let current = num % 1000;
+    if(current > 0){
+      let currentStr = "";
+      let h = Math.floor(current / 100);
+      let t = Math.floor((current - h * 100) / 10);
+      let o = Math.floor((current - h * 100 - t * 10));
+      if(h > 0){
+        currentStr += ones[h - 1];
+        currentStr += "Hundred"
+      }
+      if(t > 1){
+        currentStr += tens[t - 2];
+        if(o > 0)
+          currentStr += ones[o - 1];
+      }
+      else{
+        if(t === 1){
+          currentStr += ones[t * 10 + o - 1];
+        }
+        else {
+          if(o > 0)
+            currentStr += ones[o - 1];
+        }
+      }
+      returnStr = currentStr + thousand[thousCount] + returnStr;  
+    }
+    thousCount ++;
+    num = Math.floor(num / 1000);
+  }
+  return returnStr;
 }
 
 module.exports = numToWords;
