@@ -34,8 +34,8 @@ function permPalin(str) {
             let subStr=str.substring(0,1)+str.substring(2)
             let inde=subStr.indexOf(y)
             //the substring without ind indeclude, symmetry
-            if(inde>=0){ return permPalin(subStr.substring(0,inde)+subStr.substring(inde+1))}
-            else{ return false}
+            if(inde>=0){ return permPalin(subStr.substring(0,inde)+subStr.substring(inde+1)) }
+            else{ return false }
         }
     }
 
@@ -48,4 +48,6 @@ function permPalin(str) {
 // console.log(permPalin('cbaba')) // => true
 // console.log(permPalin('cbac')) // => false)
 // console.log(permPalin('a')) //  => true)
+// console.log(permPalin('kaajjkklloowwss')) //  => true)
+// console.log(permPalin('kaajjkklloowwssrt')) //  => false)
 module.exports = permPalin;
