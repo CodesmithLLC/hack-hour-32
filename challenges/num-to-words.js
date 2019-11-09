@@ -58,4 +58,24 @@ function numToWords(num) {
   return returnStr;
 }
 
+console.log(numToWords(4235))
+console.log(numToWords(11))
+console.log(numToWords(12))
+console.log(numToWords(13))
+console.log(numToWords(14))
+console.log(numToWords(15))
+console.log(numToWords(16))
+console.log(numToWords(17))
+console.log(numToWords(18))
+console.log(numToWords(19))
+console.log(numToWords(20))
+console.log(numToWords(21))
+console.log(numToWords(22))
+console.log(numToWords(23))
+console.log(numToWords(35))
+console.log(numToWords(56))
+console.log(numToWords(78))
+console.log(numToWords(99))
+console.log(numToWords(86))
+console.log(numToWords(34))
 module.exports = numToWords;
