@@ -12,7 +12,7 @@
 function permPalin(str) {
     //palindromes ,same number of places
     //we will recursively check for duplicates until base case is zero and substring
-    if(str===undefined){ return}
+    if(str===undefined || str===null){ return}
     if(str.length===1 || str.length==0){ return true}
     if(str.length===2){ 
         if(str[0]===str[1]){
@@ -50,4 +50,5 @@ function permPalin(str) {
 // console.log(permPalin('a')) //  => true)
 // console.log(permPalin('kaajjkklloowwss')) //  => true)
 // console.log(permPalin('kaajjkklloowwssrt')) //  => false)
+//  console.log(permPalin('4448')) //  => false)
 module.exports = permPalin;
