@@ -28,6 +28,10 @@ function balancedParens(input){
     let filtered = input.split('').filter(char => ['(', ')', '{', '}', '[', ']'].includes(char))
     console.log(filtered)
     let letter = {}
+    for (let i = 0 ; i < filtered.length; i++) {
+
+    }
+
     for (let element of filtered) {
         if (element in letter) {
             letter[element]++
@@ -36,10 +40,16 @@ function balancedParens(input){
         }
     }
     console.log(letter)
+    console.log(Object.keys(letter))
+    let lettersOnly = Object.keys(letter)
+    if (lettersOnly.indexOf(']') > lettersOnly.indexOf('[') || lettersOnly.indexOf('(') > lettersOnly.indexOf(')') || lettersOnly.indexOf('}') > lettersOnly.indexOf('{')) {
+        return false
+    }
+    console.log(letter)
     return letter['['] === letter[']'] && letter['('] === letter[')'] && letter['{'] === letter['}']
 }
 
-console.log(balancedParens('[]()asdfasdfasdf{}'))
+console.log(balancedParens(')()('))
 
 
 module.exports = balancedParens;

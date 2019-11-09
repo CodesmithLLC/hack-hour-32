@@ -9,7 +9,17 @@
  */
 
 function subsetSum(array, target) {
+    let sorted = array.sort((a,b)=> a-b)
+    console.log(sorted)
+    // for (let i = 0; i < sorted.length; i++) {
 
+    // }
+    // let newArray = array.map(num => target-num)
+    // console.log(newArray)
+    for
 }
 
-module.exports = subsetSum;
+
+console.log(subsetSum([3, 7, 4, 2], 5))
+
+// module.exports = subsetSum;

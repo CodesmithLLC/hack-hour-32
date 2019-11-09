@@ -14,7 +14,23 @@
  */
 
 function binToDec(binary) {
+    let split = binary.split('')
+    console.log(split)
+    split.reverse()
+    console.log(split)
+    return split.reduce((acc, cur, index) => {
+        console.log(index)
+        acc = acc + cur*Math.pow(2, index)
+        return acc
+    }, 0)
+
+
+    
+
 
 }
+
+console.log(binToDec('110111'))
+
 
 module.exports = binToDec;

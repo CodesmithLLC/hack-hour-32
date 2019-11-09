@@ -13,6 +13,14 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+    let cache = {}
+    function helper(time, price) {
+        cache[time] = price
+    }
+    
+
+
+
 
 }
 

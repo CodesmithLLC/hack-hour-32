@@ -11,7 +11,21 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+    let split = str.split('')
+    console.log(split)
+    for (let i = 0; i < split.length; i++) {
+        if (split[i].match(/[a-z]/ig)) {
+            console.log(i)
+            split.slice(0, 4)
+            console.log(split)
+            break;
+
+        }
+    }
+    console.log(split)
+
 
 }
 
+console.log(matchWord('____END_DNE-----'))
 module.exports = matchWord;
