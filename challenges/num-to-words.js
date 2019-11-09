@@ -23,7 +23,7 @@ function numToWords(num) {
   let returnStr = "";
   let thousCount = 0;
   let ones = ['One','Two', 'Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
-  let tens = ['Twenty','Thrity','Forty','Fifty','Sixty','Seventy','Eighty',"Ninty"];
+  let tens = ['Twenty','Thrity','Forty','Fifty','Sixty','Seventy','Eighty',"Ninety"];
   let thousand = ["",'Thousand','Million','Billion','Trillion', 'Quadrillion','Quintillion'] ;
   while(num > 0){
     let current = num % 1000;
