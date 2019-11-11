@@ -18,21 +18,23 @@
 
 function rotateGrid(grid, n) {
 
-    let outerArr = [];
-    let innerArr = [];
-
-    for (let j = 0; j < n; j++) {
-        for (let i = n; i > 0; i--) {
-            //console.log(grid[i - 1][j]);
-            innerArr.push(grid[i - 1][j]);
-            // console.log(innerArr)
+    // declare 2 empty arrays
+    let outer = [], inner = [];
+    // loop through grid
+    for (let i = 0; i < grid.length; i++) {
+        // create new rows
+        for (let j = n; j > 0; j--) {
+            inner.push(grid[j - 1][i])
         }
-        outerArr.push(innerArr);
-        innerArr = [];
+        // push row into outer
+        outer.push(inner)
+        // reset inner to empty array for next iteration
+        inner = []
     }
-    return outerArr;
+
+    return outer;
 }
 
-//console.log(rotateGrid([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3))
+console.log(rotateGrid([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3))
 
 module.exports = rotateGrid;
