@@ -26,10 +26,10 @@ function getPermutations(string) {
             results.push(firstChar + otherPermutations[j]);
         }
     }
-    return results;
+    return results.filter((el, idx, self) => (self.indexOf(el) === idx));
 }
 
-//console.log([...new Set(getPermutations(`cbaba`))])
+console.log([...new Set(getPermutations(`ababc`))].length)
 function isPalin(str) {
     return str === str.split('').reverse().join('')
 }
@@ -37,18 +37,19 @@ function isPalin(str) {
 
 function permPalin(str) {
     if (str.length === 1) return true;
-
+    // get array of permutations
     const permArr = [...new Set(getPermutations(str))];
     //console.log(permArr)
 
     const results = []
+    // loop thru permutations array and push result of result boolean from isPalin(permArr[i])
     for (let i = 0; i < permArr.length; i++) {
         results.push(isPalin(permArr[i]))
     }
     return results.includes(true) ? true : false;
 }
 
-// console.log(permPalin('racerae')) // true
+// console.log(permPalin('racerae')) //T
 // console.log(permPalin('abab')) //T
 // console.log(permPalin('cbaba'))//T 
 // console.log(permPalin('cbac')) // F
