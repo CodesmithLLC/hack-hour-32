@@ -25,7 +25,7 @@ function rotateGrid(grid, n) {
         for (let i = n; i > 0; i--) {
             //console.log(grid[i - 1][j]);
             innerArr.push(grid[i - 1][j]);
-            console.log(innerArr)
+            // console.log(innerArr)
         }
         outerArr.push(innerArr);
         innerArr = [];
