@@ -35,11 +35,11 @@ function Queue() {
   this.stack2 = new Stack();
 }
 
-Queue.prototype.push = function(val){
+Queue.prototype.enque = function(val){
   this.stack1.push(val);
 }
 
-Queue.prototype.pop = function () {
+Queue.prototype.dequeue = function () {
   if(this.stack1.isEmpty() && this.stack2.isEmpty()) return;
   if(!this.stack2.isEmpty()){
     return this.stack2.pop();
