@@ -15,7 +15,8 @@ function Stack() {
 
 
 function Queue() {
-
+    let result = Stack().concat(Stack());
+    return result;
 }
 
 module.exports = {Stack: Stack, Queue: Queue};
