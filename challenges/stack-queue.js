@@ -46,6 +46,9 @@ Queue.prototype.enqueue = function (val) {
 Queue.prototype.dequeue = function () {
     const temp = this.stack2.pop()
     if (this.stack2.length === 0) {
+        if (this.stack1.length === 0) {
+            return undefined
+        }
         while (this.stack1.length !== 0) {
             this.stack2.push(this.stack1.pop())
         }
