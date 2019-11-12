@@ -4,7 +4,8 @@
 
 
 function Stack() {
-
+    let output = [];
+    return output;
 }
 
 
