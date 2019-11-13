@@ -13,6 +13,19 @@
  */
 
 function numToWords(num) {
+  const lessThanTwenty = [
+    '', 'one', 'two', 'three', 'four',
+    'five', 'six', 'seven', 'eight', 'nine',
+    'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
+    'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
+  ];
+
+  const tens = [ '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'
+  ]
+
+  const thousands = ['', 'Thousand', 'Million', 'Billion']
+  
+  
 
 }
 
