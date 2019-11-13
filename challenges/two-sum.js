@@ -3,7 +3,16 @@
  */
 
 function twoSum(arr, n) {
-
+    const cache = {};
+    for (let i = 0; i < arr.length; i ++) {
+        if (cache.hasOwnProperty(arr[i])) {
+            return true;
+        } else {
+            cache[n - arr[i]] = true;
+        }
+    }
+    return false;
 }
+
 
 module.exports = twoSum;
