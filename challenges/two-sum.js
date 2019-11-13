@@ -3,7 +3,15 @@
  */
 
 function twoSum(arr, n) {
-
+  for(let i = 0; i < arr.length; i++){
+    for(let j = i + 1; i < arr.length; j++){
+      if(arr[j] === n - arr[i]){
+        return [arr[i], arr[j]]
+      }
+    }
+  }
 }
+
+console.log(twoSum([1,5,8,12], 9));
 
 module.exports = twoSum;
