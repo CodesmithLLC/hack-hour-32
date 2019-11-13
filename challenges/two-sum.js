@@ -3,7 +3,13 @@
  */
 
 function twoSum(arr, n) {
-
+  if(!arr) return false;
+  let cache = new Set();
+  for(let i = 0 ; i < arr.length; i ++){
+    if(cache.has(arr[i])) return true;
+    cache.add(n- arr[i]);
+  }
+  return false; 
 }
 
 module.exports = twoSum;
