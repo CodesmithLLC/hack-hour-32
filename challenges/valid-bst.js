@@ -12,14 +12,11 @@ function BinaryTree(val) {
     this.right = null;
 }
 
-function validBST(tree, currNodeL = tree, currNodeR = tree, leftNode, rightNode) {
-    if (!tree || leftNode.value > currNodeL.value || rightNode.value < currNodeR.value) return false;
-    if (!currNodeL && !currNodeR) return true;
-
-    leftNode = currNodeL.left;
-    rightNode = currNodeR.right;
-
-    return validBST(tree, currNodeL = currNodeL.left, currNodeR = currNodeR.right)
-}
+function validBST(tree) {
+    if (!tree.left || !tree.right) return;
+    if (tree.left.value > tree.value || tree.right.value < tree.value) return false;
+    if (tree.left) return validBST(tree = tree.left);
+    if (tree.right) return validBST(tree = tree.right);
+}   
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
