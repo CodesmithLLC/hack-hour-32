@@ -4,16 +4,20 @@
  *      at any given node, the value of all the nodes in its right tree must be > its value
  * Assume that each value in the tree is unique.
  */
- 
 
-function BinaryTree(val) {
-    this.value = val;
-    this.left = null;
-    this.right = null;
-}
+function validBST(tree, min = NUMBER.NEGATIVE_INFINITY, max = NUMBER.POSITIVE_INFINITY) {
 
-function validBST(tree) {
+  if (tree.value === null) return true;
 
+  if (tree.value > min && 
+	  tree.value < max && 
+	  validBST(tree.left, min, tree.value) &&
+	  validBST(tree.right, tree.value, max)) 
+    {
+	  return true
+	} else {
+	  return false
+	}
 }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
