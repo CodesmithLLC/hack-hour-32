@@ -17,8 +17,15 @@ function validBST(tree) {
     if (this.right && this.value > this.right.value) return false;
     if (this.left && this.value < this.left.value) return false;
 
+    if (this.right) {
+        return validBST(this.right);
+    } else if (this.left) {
+        return validBST(this.left);
+    }
+
+    return true;
     // if this.right or this.left exist, continue traversing and call BST on existing node, otherwise we've reached the end and it's valid
-    return (this.right || this.left) ? validBST(this.right) || validBST(this.left) : true
+    // return (this.right || this.left) ? validBST(this.right) || validBST(this.left) : true
 }
 
 
