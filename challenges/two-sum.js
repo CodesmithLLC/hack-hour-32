@@ -14,7 +14,7 @@ function twoSum(arr, n) {
     // return results.includes(n) ? true : false;
 
     /* difference */
-
+    if (arr.length < 2) return false;
 
     const diff = [];
     for (let i = 0; i < arr.length; i++) {
@@ -30,7 +30,8 @@ function twoSum(arr, n) {
     //console.log(`count`, count)
     return count === 2; // count should === 2 if there are 2 elements that sum up to n
 }
-// console.log(twoSum([1, 2, 3], 5)) // true
+//console.log(twoSum([], 2)) // false
+//console.log(twoSum([1, 2, 3], 5)) // true
 // console.log(twoSum([0, 2], 2)) // true
 // console.log(twoSum([1, 2, 3, 10], 12)) // true
 // console.log(twoSum([1, 2, 3], -1)) // false
