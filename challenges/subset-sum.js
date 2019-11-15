@@ -9,7 +9,31 @@
  */
 
 function subsetSum(array, target) {
-
+  arr = array.filter((x) => (x <= target));
+  
+  let combi = [];
+  let temp= 0;
+  let letLen = Math.pow(2, arr.length);
+  
+  for (let i = 0; i < letLen ; i += 1){
+      temp= 0;
+      for (let j = 0; j < arr.length; j += 1) {
+          if ((i & Math.pow(2,j))){ 
+              temp += arr[j]
+          }
+      }
+      if (temp !== 0) {
+          combi.push(temp);
+      }
+  }
+  
+  for (let i = 0; i < combi.length; i += 1) {
+    if (combi[i] === target) {
+      return true;
+    }
+  }
+  
+  return false;
 }
 
 module.exports = subsetSum;

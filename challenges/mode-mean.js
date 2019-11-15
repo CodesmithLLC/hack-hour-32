@@ -9,9 +9,32 @@
  *
  */
 
-
 function modemean(array) {
+  let mean = Math.floor((array.reduce((acc, el) => {
+    acc += el;
+    return acc;
+  })) / array.length);
 
+  let obj = array.reduce((acc, el) => {
+    if (!acc.hasOwnProperty(el)) {
+      acc[el] = 1;
+      return acc;
+    }
+    acc[el] += 1;
+    return acc;
+  }, {});
+  
+  let mode = 0;
+  for (let key in obj) {
+    if (obj[key] >= mode) {
+      mode = key;
+    }
+  }
+  
+  if (parseInt(mode) === mean) {
+    return true;
+  }
+  return false;
 }
 
 module.exports = modemean;
