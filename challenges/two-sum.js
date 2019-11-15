@@ -35,4 +35,5 @@ function twoSum(arr, n) {
 // console.log(twoSum([0, 2], 2)) // true
 // console.log(twoSum([1, 2, 3, 10], 12)) // true
 // console.log(twoSum([1, 2, 3], -1)) // false
+//console.log(twoSum([-1, 2, -3], -4)) // true
 module.exports = twoSum;
