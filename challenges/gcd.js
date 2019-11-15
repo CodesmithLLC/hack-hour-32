@@ -8,7 +8,20 @@
  */
 
 function gcd(a, b) {
-
+    let smaller;
+    let gcd;
+    if (a < b) {
+        smaller = a;
+    } else {
+        smaller = b;
+    }
+    for (let i = smaller; i > 0; i -= 1) {
+        if (a % i === 0 && b % i === 0) {
+            gcd = i;
+            return gcd;
+        }
+    }
 }
+
 
 module.exports = gcd;
