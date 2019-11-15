@@ -11,9 +11,7 @@ function gcd(a, b) {
     if (typeof a !== 'number' || typeof b !== 'number') return 1;
     if (a === b) return a;
 
-    let greatestCD = 0;
-
-    for (let i = 0; i < Math.min(a,b); i++) {
+    for (let i = Math.min(a,b); i >= 0; i--) {
         if (a % i === 0 && b % i === 0) return i;
     }
 
