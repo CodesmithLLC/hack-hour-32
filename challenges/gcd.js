@@ -18,7 +18,7 @@ function gcd(a, b) {
             // test whether int/# has remainder of 0;
             if (a % i === 0) {
                 // if so, divide the 2nd int by that # and check if 2nd int/# has remainder of 0 too;
-                if (b % i === 0) return i;
+                if (Number.isInteger(b % i)) return i;
             }
         }
     }
@@ -26,7 +26,7 @@ function gcd(a, b) {
     if (b > a) {
         for (let i = a; i >= 0; i--) {
             if (a % i === 0) {
-                if (a % i === 0) return i;
+                if (Number.isInteger(a % i)) return i;
             }
         }
     }
