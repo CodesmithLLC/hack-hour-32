@@ -8,7 +8,14 @@
  */
 
 function gcd(a, b) {
-
+  const arr = [];
+  for(let i = 1; i <= a; i++){
+    if(a % i === 0 && b % i === 0){
+      arr.push(i)
+    }
+  }
+  arr.sort((a,b)=>a-b)
+  return arr[arr.length-1];
 }
 
 module.exports = gcd;
