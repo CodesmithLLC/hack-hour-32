@@ -8,7 +8,19 @@
  */
 
 function gcd(a, b) {
+  const factors = [];
+
+  let higher;
+
+  a > b ? higher = a : higher = b;
+
+  for (let i = 0; i < higher; i++) {
+	if (a % i === 0 && b % i === 0) factors.push(i);
+  }
+
+  return factors[factors.length-1];
 
 }
+
 
 module.exports = gcd;
