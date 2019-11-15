@@ -8,7 +8,16 @@
  */
 
 function gcd(a, b) {
-
+  let max = Math.max(a, b);
+  let divisor = 1;
+  let count = 1;
+  while (count <= max) {
+    if (a % count == 0 && b % count == 0 ) {
+      divisor = count
+    }
+    count += 1;
+  }  
+  return divisor;
 }
 
-module.exports = gcd;
+module.exports = gcd

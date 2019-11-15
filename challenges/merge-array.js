@@ -14,7 +14,8 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
+  // compare array1[i] to array2[i], push smaller value to new array and return 
+  //  
 }
 
 module.exports = mergeArrays;
