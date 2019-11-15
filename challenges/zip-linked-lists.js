@@ -11,6 +11,20 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-};
+  let zipped;
+  let currentl1 = l1.head;
+  let currentl2 = l2.head;
+  let currentZipped;
 
-module.exports = {Node: Node, zip: zip};
+  if (currentl2) {
+    zipped.head = currentl1;
+    currentZipped = zipped.head;
+    currentl1 = currentl1.next;
+    currentZipped.next = currentl2;
+    currentZipped = currentZipped.next;
+    currentl2 = currentl2.next;
+  }
+  return zipped;
+}
+
+module.exports = { Node: Node, zip: zip };

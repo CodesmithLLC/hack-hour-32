@@ -25,7 +25,30 @@
  */
 
 function balancedParens(input){
+    let balanced = true;
+    if (input.length === 1) {
+        return false;
+    } else {
+        let indexArr = [];
+        indexArr.push()
 
+
+        // while (input.length) { 
+        //     let openingIndex = input.indexOf("("); 
+        //     console.log(openingIndex); 
+        //     let closingIndex = (input.length -1) - openingIndex;
+        //     if (input.charAt(closingIndex) === ')') {
+        //         input = input.slice(openingIndex + 1, closingIndex)
+        //     } else {
+        //         balanced = false;
+        //     }
+        // }
+        return balanced;
+    }
 }
 
+   console.log(balancedParens('(()('));
+//    balancedParens('()'); // true
+//    balancedParens(')(');  // false
+//    balancedParens('(())');  // true OP 0 1 CP 2 3 
 module.exports = balancedParens;

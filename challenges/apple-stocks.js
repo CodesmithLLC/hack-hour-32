@@ -13,7 +13,23 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+  let profit =
+    stock_prices_yesterday[stock_prices_yesterday.length - 1] -
+    stock_prices_yesterday[0];
+  let result = {};
+  for (let i = 0; i < stock_prices_yesterday.length; i++) {
+    for (let j = stock_prices_yesterday.length - 1; j >= 0; j--) {
+      if (i < j) {
+        if (stock_prices_yesterday[j] - stock_prices_yesterday[i] > profit) {
+          profit = stock_prices_yesterday[j] - stock_prices_yesterday[i];
+          // result["Buy Time"] = i;
+          // result["Sell Time"] = j;
+        }
+      }
+    }
+  }
+  return profit;
 }
 
+console.log(bestProfit([50, 100, 300, 700, 10, 250, 20, 500]));
 module.exports = bestProfit;

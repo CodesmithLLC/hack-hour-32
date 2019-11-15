@@ -8,7 +8,11 @@
  */
 
 function gcd(a, b) {
-
+  for (let i = a; i > 0; i--) {
+    if (a % i === 0 && b % i === 0) {
+      return i;
+    }
+  }
 }
 
 module.exports = gcd;
